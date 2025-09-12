@@ -1,0 +1,11 @@
+article {
+    display: block;
+}
+
+.system-entry h1 {
+    margin-bottom: 0 !important;
+}
+
+.system-entry > .inline-items {
+    margin-top: .778rem;
+}
