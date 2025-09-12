@@ -46,3 +46,52 @@ icon svg, svg[data-use] {
     position: relative;
     padding-left: 1.67em;
 }
+
+.stars-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+[class*='flex-'][class*='-start'] {
+    justify-content: flex-start;
+}
+
+[class*='flex-'] {
+    display: flex;
+}
+
+.stars-cont .starz {
+    background-position: -92% 0;
+    background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
+    background-size: 200% 100%;
+}
+
+.rating-cont span {
+    display: inline;
+    line-height: 1.3;
+}
+
+.stars-cont .starz img {
+    display: block;
+}
+
+.stars-cont img {
+    opacity: 1;
+    transition: opacity .3s ease 0s;
+    max-width: 100%;
+    border: none;
+}
+
+.system-entry .system-callout {
+    margin-top: 2.222rem;
+}
+
+.system-callout {
+    padding: 2.444rem 2.22rem;
+    background-color: var(--off-color);
+}
+
+.system-callout > li:first-child, .system-callout > li.total-0 + li {
+    padding-top: 0;
+}

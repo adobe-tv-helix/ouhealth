@@ -20,6 +20,8 @@
   --link-hover-color: #1d3ecf;
   --primary-color: #003b5c;
   --click1-color: #841617;
+  --transit-1: .4s ease 0s;
+  --off-color: #f5f5f5;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -178,9 +180,10 @@ button {
 
 /* links */
 a:any-link {
-  color: var(--link-color);
+  color: var(--primary-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color var(--transit-1);
 }
 
 a:hover {
