@@ -9,3 +9,40 @@ article {
 .system-entry > .inline-items {
     margin-top: .778rem;
 }
+
+.system-entry .inline-items > li > *:not(p) {
+    line-height: 1.8;
+}
+
+.inline-svg[class*="flex-"] svg {
+    top: initial;
+}
+
+.inline-svg svg {
+    font-size: 1.1em;
+    color: var(--click1-color);
+    left: 0;
+    position: absolute;
+    top: 0.4rem;
+}
+
+icon svg, svg[data-use] {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
+
+[class*='flex-'][class*='-middle'] {
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+*:not([class*="flex"]) > .inline-svg {
+    margin-top: 0.2em;
+}
+
+.inline-svg {
+    color: var(--text-color);
+    position: relative;
+    padding-left: 1.67em;
+}
