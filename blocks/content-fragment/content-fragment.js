@@ -9,7 +9,7 @@ export default async function decorate(block) {
   // Note: Hard-coded for demo purposes
   const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
   const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
-  const persistedQuery = '/graphql/execute.json/general-motors/teaserByPath';
+  const persistedQuery = '/graphql/execute.json/ouhealth/doctorByPath';
 
   const contentPath = block.querySelector(':scope div:nth-child(1) > div a')?.textContent?.trim();
 
