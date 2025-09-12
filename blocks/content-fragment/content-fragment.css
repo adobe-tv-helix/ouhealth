@@ -124,3 +124,19 @@ label:not(.hide):not([class*="title-style"]), .label-style {
 .system-callout > li span a {
     font-weight: 700;
 }
+
+.system-callout > li {
+    padding-top: 1.389rem;
+}
+
+[class*='flex-'][class*='-between'], [class*='flex-'][class*='-spaced'], .items-spaced .item-spacing {
+    justify-content: space-between;
+}
+
+[id] {
+    scroll-margin-top: 10em;
+}
+
+.full {
+    width: 100%;
+}
