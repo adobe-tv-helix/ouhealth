@@ -2,7 +2,8 @@
   "mappings": [
     "/content/ouhealth/:/",
     "/content/ouhealth/configuration:/.helix/config.json",
-    "/content/ouhealth/metadata:/metadata.json"
+    "/content/ouhealth/metadata:/metadata.json",
+    "/content/ouhealth/redirects:/redirects.json"
   ],
   "includes": [
     "/content/ouhealth/"
