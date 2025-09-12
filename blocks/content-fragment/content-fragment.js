@@ -68,27 +68,8 @@ export default async function decorate(block) {
 		</picture>
 	</figure>
 	
-</section><section id="DocScorePhys" class="npr-scores system-style no-padding ui-repeater hide">
-	
-	
-	<div class="npr-scores-cont" data-item="i" data-key="114341">
-		
-		<div class="valid-npi">
-			<div class="ds-summary" data-ds-id="1841555935"></div>
-			<div class="link-cont"><a href="javascript:void(0)" class="link-style-1 view-comments">View All Comments</a></div>
-		</div>
-			<div class="not-npi hide flex-between-middle">
-				<div class="star-cont">
-					<div class="stars"></div>
-					<strong>No Rating Available</strong>
-				</div>
-				<div class="btn-cont">
-					<a href="javascript:void(0)" class="btn small" modalid="1" data-role="modalbtn">Why no Ratings?</a>
-				</div>
-			</div>
-		
-	</div>
-</section><section class="system-style physician-locations locations no-padding full ui-repeater visible" id="PhysicianLocationsContainer" universal_="true" data-onvisible="visible" data-firstname="Tony" data-lastname="Abdo">
+</section>
+<section class="system-style physician-locations locations no-padding full ui-repeater visible" id="PhysicianLocationsContainer" universal_="true" data-onvisible="visible" data-firstname="Tony" data-lastname="Abdo">
 	<header role="presentation">
 		<strong class="title-style-3">Locations</strong>
 	</header>
