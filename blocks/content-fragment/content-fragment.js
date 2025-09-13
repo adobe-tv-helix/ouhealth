@@ -45,18 +45,6 @@ export default async function decorate(block) {
   const itemId = `urn:aemconnection:${contentPath}/jcr:content/data/${variationName}`;
 
   block.setAttribute('data-aue-type', 'container');
-  block.innerHTML = `
-  <div class='block' data-aue-resource=${itemId} data-aue-label='Content Fragment' data-aue-type='reference' data-aue-filter='cf'>
-		<div class='card-body-content'>
-        <p data-aue-prop='fullname' data-aue-label='Full Name' data-aue-type='text' class='fullname'>${
-          cfReq?.fullName
-        }</p>
-        <h2 data-aue-prop='title' data-aue-label='Title' data-aue-type='text' class='title'>${
-          cfReq?.title
-        }</h2>
-    </div>
-  </div>
-	`;
 
   block.innerHTML = `
   <div class='main flex-spaced-wrap-between-reversed-top-block-1024'>
@@ -75,7 +63,10 @@ export default async function decorate(block) {
             <ul class="system-cards items-1">
                 <li class="item-1" data-item="i" data-key="5393931">
                     ${cfReq?.locationsArea?.html}
-                    <a aria-label="more information about this location" class="link-style-1" href="#">More Information</a>
+                    <a aria-label="more information about this location" class="link-style-1" href="#">
+                        <img src="https://ouhealth.com/images/assets/link-arrow-large.png" alt="More Information">
+                        More Information
+                    </a>
                 </li>
             </ul>
         </section>

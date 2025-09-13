@@ -320,7 +320,7 @@ main section header > *:last-child {
 .mar-t-huge {
     margin-top: var(--spacing-huge);
 }
-
+/* arrow displayed in wrong location
 .link-style-1:after, .link-style-2:after, .link-style-3:after {
     position: absolute;
     top: .25rem;
@@ -335,3 +335,4 @@ main section header > *:last-child {
     background-size: cover;
     background-position: 100% 50%;
 }
+    */
