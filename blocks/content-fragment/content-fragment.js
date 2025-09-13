@@ -165,6 +165,7 @@ export default async function decorate(block) {
 				</li>
 			</ul>
             ` : ''}
+            ${cfReq?.boardCertification ? `
             <ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Board Certification</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="122137">
@@ -172,6 +173,7 @@ export default async function decorate(block) {
 					<span></span>
 				</li>
 			</ul>
+            ` : ''}
 		</div>
         ${cfReq?.areasOfInterest?.html ? `
 		<div class="content-style">
