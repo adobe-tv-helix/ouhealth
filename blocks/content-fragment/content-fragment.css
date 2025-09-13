@@ -308,3 +308,11 @@ main section header > *:last-child {
     position: absolute;
     z-index: -1;
 }
+
+[class*="title-style-"] {
+    display: block;
+}
+
+.content-style > .title-style-5:not([class*="mar-t"]) {
+    margin-top: 1.3rem;
+}
