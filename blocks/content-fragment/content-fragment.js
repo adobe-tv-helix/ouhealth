@@ -60,38 +60,26 @@ export default async function decorate(block) {
 
   block.innerHTML = `
   <div class='main flex-spaced-wrap-between-reversed-top-block-1024'>
-    <aside class="sub-zone side-zone" id="SubZoneRight" role="presentation"><section class="system-style system-entry no-padding physician ui-repeater visible" id="PhysiciansSideInfo" universal_="true" data-onvisible="visible">
-	
-	<figure class="system-card tall" role="presentation" data-item="i">
-		<picture class="">
-			<img class="bg-cover-center" src="/cms/thumbnails/00/400x500//images/physicians/Tony-Abdo-MD.jpg" alt="">
-			
-		</picture>
-	</figure>
-	
-</section>
-<section class="system-style physician-locations locations no-padding full ui-repeater visible" id="PhysicianLocationsContainer" universal_="true" data-onvisible="visible" data-firstname="Tony" data-lastname="Abdo">
-	<header role="presentation">
-		<strong class="title-style-3">Locations</strong>
-	</header>
-	<ul class="system-cards items-1">
-		<li class="item-1" data-item="i" data-key="5393931">
-			<strong class="title-style-5" role="heading" aria-level="3">OU Health Physicians — Cardiology, Pulmonary &amp; Vascular Medicine Clinic</strong>
-			
-				<span class="note-style-1">
-					
-					 Adult Services
-				</span>
-			
-			<address>825 NE 10th, 2E <br>Oklahoma City, OK 73104
-			<br><a href="tel:4052717001" class="phone-link">(405) 271-7001</a></address>
-			
-				<a aria-label="more information about this location" class="link-style-1" href="/find-a-location/ou-health-physicians-cardiology-pulmonary-vascul/">More Information</a>
-			
-			
-		</li>
-	</ul>
-</section></aside>
+    <aside class="sub-zone side-zone" id="SubZoneRight" role="presentation">
+        <section class="system-style system-entry no-padding physician ui-repeater visible" id="PhysiciansSideInfo" universal_="true" data-onvisible="visible">	
+            <figure class="system-card tall" role="presentation" data-item="i">
+                <picture class="">
+                    <img class="bg-cover-center" src="${cfReq?.imagePath}" alt=""> 
+                </picture>
+            </figure>
+        </section>
+        <section class="system-style physician-locations locations no-padding full ui-repeater visible" id="PhysicianLocationsContainer" universal_="true" data-onvisible="visible" data-firstname="Tony" data-lastname="Abdo">
+            <header role="presentation">
+                <strong class="title-style-3">Locations</strong>
+            </header>
+            <ul class="system-cards items-1">
+                <li class="item-1" data-item="i" data-key="5393931">
+                    ${cfReq.locationsArea}
+                    <a aria-label="more information about this location" class="link-style-1" href="#">More Information</a>
+                </li>
+            </ul>
+        </section>
+    </aside>
 
   <article class="system-style physician system-entry ui-repeater visible" id="PhysicianContent" universal_="true" data-onvisible="visible" data-content="true">
 	
