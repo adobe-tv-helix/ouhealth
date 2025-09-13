@@ -104,7 +104,7 @@ export default async function decorate(block) {
 				</div>
 				<div>
 					<span>(${cfReq?.numberOfRatings}&nbsp;</span><span> Ratings)</span>
-					<span>, 7&nbsp;</span><span> Comments</span>
+					<span>, ${cfReq?.numberOfComments || '7'}&nbsp;</span><span> Comments</span>
 				</div>
 			</div>
 		
@@ -192,7 +192,6 @@ export default async function decorate(block) {
                 <li class="full flex-between-top-between" data-item="i" data-key="1502383389">
 				    <span class="review-date">08/16/2025</span>
 				    <div class="stars-cont flex-middle-start">
-							
 					    <div class="starz" style="
 							background-position: -100% 0;
 							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
@@ -201,7 +200,7 @@ export default async function decorate(block) {
 						    <img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
 					    </div>
 				    </div>
-				    <p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
+				    <p>The doctor was so kind and is truly compassionate.</p>
 			    </li>
                 <li class="full flex-between-top-between" data-item="i" data-key="1502358599">
 					<span class="review-date">04/17/2025</span>
@@ -227,7 +226,7 @@ export default async function decorate(block) {
 							<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
 						</div>	
 					</div>
-					<p>I would recommend Dr Abdo to anyone. He is one of the most concerned doctors I have had.</p>	
+					<p>I would recommend Dr. ${cfReq?.fullName} to anyone and is one of the most concerned doctors I have had.</p>	
 				</li>
                 <li class="full flex-between-top-between" data-item="i" data-key="1502349183">
 					<span class="review-date">01/18/2025</span>
@@ -240,7 +239,7 @@ export default async function decorate(block) {
 							<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5">
 						</div>	
 					</div>
-					<p>I'm going through a very rough time and Dr. Abdo showed compassion and care and excellent bed side manner</p>					
+					<p>I'm going through a very rough time and Dr. ${cfReq?.fullName} showed compassion and care and excellent bed side manner</p>					
 				</li><li class="cms-repeater-placeholder" style="display:none !important"></li>
 			</ul>
 			<div class="more clear">
