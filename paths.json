@@ -6,6 +6,7 @@
     "/content/ouhealth/redirects:/redirects.json"
   ],
   "includes": [
-    "/content/ouhealth/"
+    "/content/ouhealth/",
+    "/content/dam/ouhealth/fragments/"
   ]
 }
