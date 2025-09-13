@@ -53,8 +53,21 @@ icon svg, svg[data-use] {
     justify-content: space-between;
 }
 
-[class*='flex-'][class*='-start'] {
+[class*='flex-'][class*='-start'], [class*='flex-'][class*='-top'] {
     justify-content: flex-start;
+}
+
+[class*='flex-'][class*='-between'], [class*='flex-'][class*='-spaced'], .items-spaced .item-spacing {
+    justify-content: space-between;
+}
+
+.main {
+    width: 100%;
+    margin: 0 auto;
+    max-width: calc(69.778rem + (var(--main-padding) * 2));
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
+    position: relative;
 }
 
 [class*='flex-'] {
@@ -195,4 +208,11 @@ h3, .title-style-3 {
     display: block;
     font-weight: 400;
     line-height: 2;
+}
+
+[class*='flex-'][class*='-reverse'] {
+    flex-direction: row-reverse;
+}
+[class*='flex-'][class*='-wrap'] {
+    flex-wrap: wrap;
 }

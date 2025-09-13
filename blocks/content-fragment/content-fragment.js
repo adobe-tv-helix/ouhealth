@@ -59,7 +59,8 @@ export default async function decorate(block) {
 	`;
 
   block.innerHTML = `
-  <aside class="sub-zone side-zone" id="SubZoneRight" role="presentation"><section class="system-style system-entry no-padding physician ui-repeater visible" id="PhysiciansSideInfo" universal_="true" data-onvisible="visible">
+  <div class='main flex-spaced-wrap-between-reversed-top-block-1024'>
+    <aside class="sub-zone side-zone" id="SubZoneRight" role="presentation"><section class="system-style system-entry no-padding physician ui-repeater visible" id="PhysiciansSideInfo" universal_="true" data-onvisible="visible">
 	
 	<figure class="system-card tall" role="presentation" data-item="i">
 		<picture class="">
@@ -364,6 +365,7 @@ export default async function decorate(block) {
 		</div>
 	</div>
 </article>
+</div>
 `;
   if (!isAuthor) {
     moveInstrumentation(block, null);
