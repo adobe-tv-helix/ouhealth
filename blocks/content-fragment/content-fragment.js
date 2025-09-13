@@ -171,7 +171,7 @@ export default async function decorate(block) {
 				</li>
 			</ul>
 		</div>
-        ${cfReq?.areasOfInterest ? `
+        ${cfReq?.areasOfInterest?.html ? `
 		<div class="content-style">
 			<strong class="title-style-2">Medical Interests</strong>
 				<strong class="title-style-5" role="heading" aria-level="3">Areas of Interest:</strong>
