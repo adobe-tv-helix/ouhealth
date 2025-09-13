@@ -155,7 +155,7 @@ export default async function decorate(block) {
 					<span>${cfReq?.fellowship.html}</span>
 				</li>
 			</ul>
-            ${cfReq?.residency ? `
+            ${cfReq?.residency?.html ? `
             <ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Residency</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="121563">
