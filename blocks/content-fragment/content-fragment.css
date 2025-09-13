@@ -32,7 +32,7 @@ icon svg, svg[data-use] {
     fill: currentColor;
 }
 
-[class*='flex-'][class*='-wrap'] {
+.flex-spaced-wrap-block-500 {
     flex-wrap: wrap;
 }
 
