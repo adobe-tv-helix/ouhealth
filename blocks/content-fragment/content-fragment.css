@@ -216,3 +216,8 @@ h3, .title-style-3 {
 [class*='flex-'][class*='-wrap'] {
     flex-wrap: wrap;
 }
+
+.two-col-container .content-zone {
+    flex: 0 1 auto;
+    width: 62.898%;
+}

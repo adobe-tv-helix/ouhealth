@@ -80,20 +80,15 @@ export default async function decorate(block) {
             </ul>
         </section>
     </aside>
-
-  <article class="system-style physician system-entry ui-repeater visible" id="PhysicianContent" universal_="true" data-onvisible="visible" data-content="true">
+    <div class="sub-zone content-zone" id="SubZoneLeft">
+        <article class="system-style physician system-entry ui-repeater visible" id="PhysicianContent" universal_="true" data-onvisible="visible" data-content="true">
+	        <h1 class="hide-1024" aria-level="2" role="heading">${cfReq?.fullName},  ${cfReq?.title}</h1>
 	
-	
-	<h1 class="hide-1024" data-item="i" data-key="114341" aria-level="2" role="heading">Tony Abdo,  MD</h1>
-	
-	
-		<ul class="inline-items">
-			
-				<li class="inline-svg flex-middle"><svg viewBox="0 0 36 36" data-use="/cms/svg/site/dv5guqmrkyk.36.svg#check" aria-hidden="true">
-	<path d="M9.204 33.656a17.836 17.836 0 0 1-8.516-10.792a17.75 17.75 0 0 1 1.618-13.64a18.016 18.016 0 0 1 15.716-9.182a18.056 18.056 0 0 1 8.779 2.286a0.964 0.964 0 0 1 0.458 0.59a0.964 0.964 0 0 1-0.087 0.746a0.98 0.98 0 0 1-0.855 0.498a0.922 0.922 0 0 1-0.476-0.128a16.098 16.098 0 0 0-7.83-2.032a16.016 16.016 0 0 0-3.222 0.33a15.915 15.915 0 0 0-10.163 6.864a15.848 15.848 0 0 0-2.334 12.022a16.078 16.078 0 0 0 15.703 12.806a16.182 16.182 0 0 0 3.236-0.332a15.938 15.938 0 0 0 10.172-6.864a15.876 15.876 0 0 0 2.325-12.029a0.956 0.956 0 0 1 0.143-0.73a0.942 0.942 0 0 1 0.621-0.411a0.776 0.776 0 0 1 0.194-0.018a0.97 0.97 0 0 1 0.952 0.774a18.415 18.415 0 0 1 0.363 3.6a18.012 18.012 0 0 1-2.294 8.762a18.038 18.038 0 0 1-15.723 9.182A17.998 17.998-35176.904 0 1 9.204 33.656Zm8.103-11.567l-6.808-6.788a0.984 0.984 0 0 1-0.288-0.693a0.945 0.945 0 0 1 0.288-0.687a0.975 0.975 0 0 1 0.69-0.291a0.956 0.956 0 0 1 0.687 0.291l6.122 6.099l16.329-16.288a0.97 0.97 0 0 1 0.69-0.288a0.969 0.969 0 0 1 0.69 0.28a1.004 1.004 0 0 1 0.288 0.698a0.96 0.96 0 0 1-0.288 0.682l-17.016 16.983a1.008 1.008 0 0 1-0.693 0.28A0.981 0.981-35176.904 0 1 17.31 22.092Z"></path>
-</svg>Accepting New Patients</li>
-			
-			
+		    <ul class="inline-items">
+			    <li class="inline-svg flex-middle"><svg viewBox="0 0 36 36" data-use="/cms/svg/site/dv5guqmrkyk.36.svg#check" aria-hidden="true">
+	                <path d="M9.204 33.656a17.836 17.836 0 0 1-8.516-10.792a17.75 17.75 0 0 1 1.618-13.64a18.016 18.016 0 0 1 15.716-9.182a18.056 18.056 0 0 1 8.779 2.286a0.964 0.964 0 0 1 0.458 0.59a0.964 0.964 0 0 1-0.087 0.746a0.98 0.98 0 0 1-0.855 0.498a0.922 0.922 0 0 1-0.476-0.128a16.098 16.098 0 0 0-7.83-2.032a16.016 16.016 0 0 0-3.222 0.33a15.915 15.915 0 0 0-10.163 6.864a15.848 15.848 0 0 0-2.334 12.022a16.078 16.078 0 0 0 15.703 12.806a16.182 16.182 0 0 0 3.236-0.332a15.938 15.938 0 0 0 10.172-6.864a15.876 15.876 0 0 0 2.325-12.029a0.956 0.956 0 0 1 0.143-0.73a0.942 0.942 0 0 1 0.621-0.411a0.776 0.776 0 0 1 0.194-0.018a0.97 0.97 0 0 1 0.952 0.774a18.415 18.415 0 0 1 0.363 3.6a18.012 18.012 0 0 1-2.294 8.762a18.038 18.038 0 0 1-15.723 9.182A17.998 17.998-35176.904 0 1 9.204 33.656Zm8.103-11.567l-6.808-6.788a0.984 0.984 0 0 1-0.288-0.693a0.945 0.945 0 0 1 0.288-0.687a0.975 0.975 0 0 1 0.69-0.291a0.956 0.956 0 0 1 0.687 0.291l6.122 6.099l16.329-16.288a0.97 0.97 0 0 1 0.69-0.288a0.969 0.969 0 0 1 0.69 0.28a1.004 1.004 0 0 1 0.288 0.698a0.96 0.96 0 0 1-0.288 0.682l-17.016 16.983a1.008 1.008 0 0 1-0.693 0.28A0.981 0.981-35176.904 0 1 17.31 22.092Z"></path></svg>
+                    Accepting New Patients
+                </li>
 			
 				<li class="inline-svg flex-middle"><svg viewBox="0 0 36 36" data-use="/cms/svg/site/dv5guqmrkyk.36.svg#check" aria-hidden="true">
 	<path d="M9.204 33.656a17.836 17.836 0 0 1-8.516-10.792a17.75 17.75 0 0 1 1.618-13.64a18.016 18.016 0 0 1 15.716-9.182a18.056 18.056 0 0 1 8.779 2.286a0.964 0.964 0 0 1 0.458 0.59a0.964 0.964 0 0 1-0.087 0.746a0.98 0.98 0 0 1-0.855 0.498a0.922 0.922 0 0 1-0.476-0.128a16.098 16.098 0 0 0-7.83-2.032a16.016 16.016 0 0 0-3.222 0.33a15.915 15.915 0 0 0-10.163 6.864a15.848 15.848 0 0 0-2.334 12.022a16.078 16.078 0 0 0 15.703 12.806a16.182 16.182 0 0 0 3.236-0.332a15.938 15.938 0 0 0 10.172-6.864a15.876 15.876 0 0 0 2.325-12.029a0.956 0.956 0 0 1 0.143-0.73a0.942 0.942 0 0 1 0.621-0.411a0.776 0.776 0 0 1 0.194-0.018a0.97 0.97 0 0 1 0.952 0.774a18.415 18.415 0 0 1 0.363 3.6a18.012 18.012 0 0 1-2.294 8.762a18.038 18.038 0 0 1-15.723 9.182A17.998 17.998-35176.904 0 1 9.204 33.656Zm8.103-11.567l-6.808-6.788a0.984 0.984 0 0 1-0.288-0.693a0.945 0.945 0 0 1 0.288-0.687a0.975 0.975 0 0 1 0.69-0.291a0.956 0.956 0 0 1 0.687 0.291l6.122 6.099l16.329-16.288a0.97 0.97 0 0 1 0.69-0.288a0.969 0.969 0 0 1 0.69 0.28a1.004 1.004 0 0 1 0.288 0.698a0.96 0.96 0 0 1-0.288 0.682l-17.016 16.983a1.008 1.008 0 0 1-0.693 0.28A0.981 0.981-35176.904 0 1 17.31 22.092Z"></path>
@@ -321,38 +316,8 @@ export default async function decorate(block) {
 				
 			</div>
 		
-	
-	<div class="all-the-schema" style="display:none;" itemscope="" itemtype="http://schema.org/Physician" itemref="PhysicianContent" data-item="i" data-key="114341">
-		<meta itemprop="name" content="Tony Abdo MD">
-		<meta itemprop="availableService" content="">
-		<meta itemprop="medicalSpecialty" content="">
-		<meta itemprop="image" content="http://www.ouhealth.com/images/physicians/Tony-Abdo-MD.jpg">
-		
-		<div itemprop="hospitalAffiliation" itemscope="" itemtype="http://schema.org/Hospital">
-			<meta itemprop="legalName" content="">
-			<meta itemprop="name" content="">
-			<div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-				<meta itemprop="streetAddress" content=" ">
-				<meta itemprop="addressLocality" content="">
-				<meta itemprop="addressRegion" content=" ">
-				<meta itemprop="postalCode" content="">
-				<meta itemprop="addressCountry" content="">
-				<meta itemprop="telephone" content="">
-			</div>
-			<meta itemprop="image" content="http://www.ouhealth.com/images/assets/logo.png">
-			<meta itemprop="name" content="OU Health">
-		</div>
-		<div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-			<meta itemprop="streetAddress" content=" ">
-			<meta itemprop="addressLocality" content="">
-			<meta itemprop="addressRegion" content=" ">
-			<meta itemprop="postalCode" content="">
-			<meta itemprop="addressCountry" content="">
-			<meta itemprop="telephone" content="">
-			<meta itemprop="image" content="http://www.ouhealth.com/images/assets/logo.png">
-		</div>
-	</div>
-</article>
+        </article>
+    </div>
 </div>
 `;
   if (!isAuthor) {
