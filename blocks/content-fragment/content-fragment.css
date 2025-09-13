@@ -320,3 +320,18 @@ main section header > *:last-child {
 .mar-t-huge {
     margin-top: var(--spacing-huge);
 }
+
+.link-style-1:after, .link-style-2:after, .link-style-3:after {
+    position: absolute;
+    top: .25rem;
+    transform: translateX(0);
+    left: 0;
+    width: .889rem;
+    height: .556rem;
+    background-image: url(https://ouhealth.com/images/assets/link-arrow-large.png);
+    transition: var(--transit-1);
+    content: '';
+    z-index: -1;
+    background-size: cover;
+    background-position: 100% 50%;
+}
