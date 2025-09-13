@@ -195,6 +195,20 @@ export default async function decorate(block) {
 				    </div>
 				    <p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
 			    </li>
+                <li class="full flex-between-top-between" data-item="i" data-key="1502383389">
+				    <span class="review-date">08/16/2025</span>
+				    <div class="stars-cont flex-middle-start">
+							
+					    <div class="starz" style="
+							background-position: -100% 0;
+							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
+							background-size: 200% 100%;
+						">
+						    <img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
+					    </div>
+				    </div>
+				    <p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
+			    </li>
                 <li class="full flex-between-top-between" data-item="i" data-key="1502358785">
 					<span class="review-date">04/17/2025</span>
 					<div class="stars-cont flex-middle-start">
