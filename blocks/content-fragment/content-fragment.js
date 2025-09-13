@@ -188,30 +188,33 @@ export default async function decorate(block) {
 						<meta itemprop="ratingValue" content="4.680000">
 						<meta itemprop="worstRating" content="1">
 					</span>
-				</li><li class="cms-repeater-placeholder" style="display:none !important"></li><li class="full flex-between-top-between" data-item="i" data-key="1502383389">
-				<span class="review-date">08/16/2025</span>
-				<div class="stars-cont flex-middle-start">
+				</li>
+                <li class="cms-repeater-placeholder" style="display:none !important"></li><li class="full flex-between-top-between" data-item="i" data-key="1502383389">
+				    <span class="review-date">08/16/2025</span>
+				    <div class="stars-cont flex-middle-start">
 							
-					<div class="starz" style="
+					    <div class="starz" style="
 							background-position: -100% 0;
 							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
 							background-size: 200% 100%;
-					">
+						">
+						    <img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
+					    </div>
+				    </div>
+				    <p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
+			    </li>
+                <li class="cms-repeater-placeholder" style="display:none !important"></li><li class="full flex-between-top-between" data-item="i" data-key="1502358785">
+					<span class="review-date">04/17/2025</span>
+					<div class="stars-cont flex-middle-start">
+						<div class="starz" style="
+							background-position: -100% 0;
+							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
+							background-size: 200% 100%;
+						">
 					<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
 				    </div>
 				</div>
 				<p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
-						
-							<div class="all-the-schema" style="display:none;">
-								<span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
-									<meta itemprop="author" content="Anonymous">
-									<meta itemprop="reviewBody" content="I love Dr. Tony Abdo. He is so kind and he is truly compassionate.">
-									<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
-										<meta itemprop="ratingValue" content="5.00">
-									</div>
-									<meta itemprop="datePublished" content="Aug 16, 2025">
-								</span>
-							</div>
 						
 					</li><li class="full flex-between-top-between" data-item="i" data-key="1502358785">
 						<span class="review-date">04/17/2025</span>

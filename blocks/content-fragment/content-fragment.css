@@ -336,3 +336,8 @@ main section header > *:last-child {
     background-position: 100% 50%;
 }
     */
+
+#physicianSchema .review-date {
+    margin-top: 0.8em;
+    margin-bottom: 0.25em;
+}
