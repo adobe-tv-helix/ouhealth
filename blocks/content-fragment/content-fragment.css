@@ -32,6 +32,10 @@ icon svg, svg[data-use] {
     fill: currentColor;
 }
 
+[class*='flex-'][class*='-wrap'] {
+    flex-wrap: wrap;
+}
+
 [class*='flex-'][class*='-middle'] {
     -ms-flex-align: center;
     align-items: center;
@@ -241,10 +245,10 @@ main section header > *:last-child {
     margin-bottom: 0;
 }
 
-.title-style-3 {
-    font-size: 1.33rem;
-    font-weight: 600;
-    font-style: normal;
-    line-height: 1.5;
-    color: var(--primary-color);
+.two-col-container .side-zone > *:first-child {
+    margin-top: 0;
+}
+
+.two-col-container .side-zone > *:not(form), .two-col-container .side-zone > form > *, .two-col-container .side-zone .aside-margin {
+    margin-bottom: 2.78rem;
 }
