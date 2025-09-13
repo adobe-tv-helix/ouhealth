@@ -64,7 +64,7 @@ export default async function decorate(block) {
         <section class="system-style system-entry no-padding physician ui-repeater visible" id="PhysiciansSideInfo" universal_="true" data-onvisible="visible">	
             <figure class="system-card tall" role="presentation" data-item="i">
                 <picture class="">
-                    <img class="bg-cover-center" src="${cfReq?.imagePath}" alt=""> 
+                    <img class="bg-cover-center" src="${cfReq?.imagePath?._path}" alt=""> 
                 </picture>
             </figure>
         </section>
@@ -74,7 +74,7 @@ export default async function decorate(block) {
             </header>
             <ul class="system-cards items-1">
                 <li class="item-1" data-item="i" data-key="5393931">
-                    ${cfReq.locationsArea}
+                    ${cfReq.locationsArea.html}
                     <a aria-label="more information about this location" class="link-style-1" href="#">More Information</a>
                 </li>
             </ul>
