@@ -211,12 +211,13 @@ export default async function decorate(block) {
 							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
 							background-size: 200% 100%;
 						">
-					<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
+					    <img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
+				        </div>
 				    </div>
-				</div>
-				<p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
+				    <p>Good</p>
+			    </li>
 						
-					</li><li class="full flex-between-top-between" data-item="i" data-key="1502358785">
+				</li><li class="full flex-between-top-between" data-item="i" data-key="1502358785">
 						<span class="review-date">04/17/2025</span>
 							<div class="stars-cont flex-middle-start">
 							
@@ -225,22 +226,12 @@ export default async function decorate(block) {
 									background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
 									background-size: 200% 100%;
 								">
-									<img src="/images/panel/star-ratings.png" alt="Rating: 5.00">
+									<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
 								</div>
 							
 						</div>
 						<p>Good</p>
-						
-							<div class="all-the-schema" style="display:none;">
-								<span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
-									<meta itemprop="author" content="Anonymous">
-									<meta itemprop="reviewBody" content="Good">
-									<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
-										<meta itemprop="ratingValue" content="5.00">
-									</div>
-									<meta itemprop="datePublished" content="Apr 17, 2025">
-								</span>
-							</div>
+
 						
 					</li><li class="full flex-between-top-between" data-item="i" data-key="1502358599">
 						<span class="review-date">04/10/2025</span>
