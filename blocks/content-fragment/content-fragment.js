@@ -74,7 +74,7 @@ export default async function decorate(block) {
             </header>
             <ul class="system-cards items-1">
                 <li class="item-1" data-item="i" data-key="5393931">
-                    ${cfReq.locationsArea.html}
+                    ${cfReq?.locationsArea?.html}
                     <a aria-label="more information about this location" class="link-style-1" href="#">More Information</a>
                 </li>
             </ul>
@@ -136,7 +136,7 @@ export default async function decorate(block) {
 			<li class="flex-between-top-spaced-wrap-block-500">
 				<strong class="label-style third">Gender: </strong>
 				<span class="two-thirds block">
-					${cfReq.gender}					
+					${cfReq?.gender}					
 				</span>
 			</li>	
 	    </ul>
