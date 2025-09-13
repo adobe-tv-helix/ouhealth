@@ -115,35 +115,31 @@ export default async function decorate(block) {
 				</div>
 			</div>
 		
-
-	<a style="font-size: 0.8em;text-decoration: underline;" href="#physicianSchema">VIEW ALL COMMENTS</a>
-	<ul class="system-callout description-list" data-item="i" data-key="114341">
+	    </div>
+	    <a style="font-size: 0.8em;text-decoration: underline;" href="#physicianSchema">VIEW ALL COMMENTS</a>
+	    <ul class="system-callout description-list" data-item="i" data-key="114341">
+            <li class="full flex-between-top-spaced-wrap-block-500 ui-repeater" id="PhysicianContent_ITM114341_PrimaryPhysicianSpecialties">
+                <strong class="label-style third">Primary Specialty:</strong>
+                <span class="two-thirds block">
+                    <a href="#" data-item="i" data-key="4048044">${cfReq?.primarySpecialty}</a>
+                </span>
+            </li>
 		
-		
-		<li class="full flex-between-top-spaced-wrap-block-500 ui-repeater" id="PhysicianContent_ITM114341_PrimaryPhysicianSpecialties">
-			<strong class="label-style third">Primary Specialty:</strong>
-			<span class="two-thirds block">
-				<a href="/find-a-doctor/?Specialty=287068" data-item="i" data-key="4048044">Pulmonary Medicine</a>
-			</span>
-		</li>
-		
-		<li class="full flex-between-top-spaced-wrap-block-500 ui-repeater" id="PhysicianContent_ITM114341_AdditionalLanguages">
-			<strong class="label-style third">Languages Spoken:</strong>
-			<span class="two-thirds block">
-				<span data-item="i" data-key="1184963">Arabic, </span><span data-item="i" data-key="1184964">French, </span><span data-item="i" data-key="1267364">English</span>
-			</span>
-		</li>
+            <li class="full flex-between-top-spaced-wrap-block-500 ui-repeater" id="PhysicianContent_ITM114341_AdditionalLanguages">
+                <strong class="label-style third">Languages Spoken:</strong>
+                <span class="two-thirds block">
+                    <span data-item="i" data-key="1184963">${cfReq?.languages}</span>
+                </span>
+            </li>
 		
 		
 			<li class="flex-between-top-spaced-wrap-block-500">
 				<strong class="label-style third">Gender: </strong>
 				<span class="two-thirds block">
-					Male
-					
+					${cfReq.gender}					
 				</span>
-			</li>
-		
-	</ul>
+			</li>	
+	    </ul>
 	
 		<div id="PhysicianContent_ITM114341_PhysEducation" class="phys-education content-style mar-t-3 ui-repeater">
 			<strong class="title-style-2">Health Education</strong>
