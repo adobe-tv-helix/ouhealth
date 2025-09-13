@@ -50,6 +50,7 @@
   --nav-height: 64px;
 
   --main-padding: 2.5%;
+  --transit-1: .4s ease 0s;
 }
 
 /* fallback fonts */
