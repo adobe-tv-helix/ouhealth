@@ -181,14 +181,6 @@ export default async function decorate(block) {
 			<a name="Reviews"></a>
 			<h2>Reviews</h2>
 			<ul id="physicianSchema">
-				<li style="display:none;">
-					<span itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-						<meta itemprop="ratingCount" content="7">
-						<meta itemprop="bestRating" content="5.00">
-						<meta itemprop="ratingValue" content="4.680000">
-						<meta itemprop="worstRating" content="1">
-					</span>
-				</li>
                 <li class="cms-repeater-placeholder" style="display:none !important"></li><li class="full flex-between-top-between" data-item="i" data-key="1502383389">
 				    <span class="review-date">08/16/2025</span>
 				    <div class="stars-cont flex-middle-start">
@@ -203,97 +195,51 @@ export default async function decorate(block) {
 				    </div>
 				    <p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
 			    </li>
-                <li class="cms-repeater-placeholder" style="display:none !important"></li><li class="full flex-between-top-between" data-item="i" data-key="1502358785">
+                <li class="full flex-between-top-between" data-item="i" data-key="1502358785">
 					<span class="review-date">04/17/2025</span>
 					<div class="stars-cont flex-middle-start">
 						<div class="starz" style="
-							background-position: -100% 0;
-							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
-							background-size: 200% 100%;
+								background-position: -100% 0;
+								background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
+								background-size: 200% 100%;
 						">
-					    <img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
-				        </div>
-				    </div>
-				    <p>Good</p>
-			    </li>
-						
-				</li><li class="full flex-between-top-between" data-item="i" data-key="1502358785">
-						<span class="review-date">04/17/2025</span>
-							<div class="stars-cont flex-middle-start">
-							
-								<div class="starz" style="
-									background-position: -100% 0;
-									background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
-									background-size: 200% 100%;
-								">
-									<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
-								</div>
-							
+						    <img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
 						</div>
-						<p>Good</p>
-
-						
-					</li><li class="full flex-between-top-between" data-item="i" data-key="1502358599">
-						<span class="review-date">04/10/2025</span>
-							<div class="stars-cont flex-middle-start">
-							
-								<div class="starz" style="
-									background-position: -100% 0;
-									background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
-									background-size: 200% 100%;
-								">
-									<img src="/images/panel/star-ratings.png" alt="Rating: 5.00">
-								</div>
-							
-						</div>
-						<p>I would recommend Dr Abdo to anyone. He is one of the most concerned doctors I have had.</p>
-						
-							<div class="all-the-schema" style="display:none;">
-								<span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
-									<meta itemprop="author" content="Anonymous">
-									<meta itemprop="reviewBody" content="I would recommend Dr Abdo to anyone. He is one of the most concerned doctors I have had.">
-									<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
-										<meta itemprop="ratingValue" content="5.00">
-									</div>
-									<meta itemprop="datePublished" content="Apr 10, 2025">
-								</span>
-							</div>
-						
-					</li><li class="full flex-between-top-between" data-item="i" data-key="1502349183">
-						<span class="review-date">01/18/2025</span>
-							<div class="stars-cont flex-middle-start">
-							
-								<div class="starz" style="
-									background-position: -100% 0;
-									background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
-									background-size: 200% 100%;
-								">
-									<img src="/images/panel/star-ratings.png" alt="Rating: 5">
-								</div>
-							
-						</div>
-						<p>I'm going through a very rough time and Dr. Abdo showed compassion and care and excellent bed side manner</p>
-						
-							<div class="all-the-schema" style="display:none;">
-								<span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
-									<meta itemprop="author" content="Anonymous">
-									<meta itemprop="reviewBody" content="I'm going through a very rough time and Dr. Abdo showed compassion and care and excellent bed side manner">
-									<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
-										<meta itemprop="ratingValue" content="5">
-									</div>
-									<meta itemprop="datePublished" content="Jan 18, 2025">
-								</span>
-							</div>
-						
-					</li><li class="cms-repeater-placeholder" style="display:none !important"></li>
-				</ul>
-				
-					<div class="more clear">
-						<a class="showmore" href="javascript:void('More')">Show More</a>
 					</div>
-				
-			</div>
-		
+					<p>Good</p>	
+				</li>
+						
+				<li class="full flex-between-top-between" data-item="i" data-key="1502358599">
+					<span class="review-date">04/10/2025</span>
+					<div class="stars-cont flex-middle-start">		
+						<div class="starz" style="
+								background-position: -100% 0;
+								background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
+								background-size: 200% 100%;
+						">
+							<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
+						</div>	
+					</div>
+					<p>I would recommend Dr Abdo to anyone. He is one of the most concerned doctors I have had.</p>	
+				</li>
+                <li class="full flex-between-top-between" data-item="i" data-key="1502349183">
+					<span class="review-date">01/18/2025</span>
+					<div class="stars-cont flex-middle-start">		
+						<div class="starz" style="
+								background-position: -100% 0;
+								background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
+								background-size: 200% 100%;
+						">
+							<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5">
+						</div>	
+					</div>
+					<p>I'm going through a very rough time and Dr. Abdo showed compassion and care and excellent bed side manner</p>					
+				</li><li class="cms-repeater-placeholder" style="display:none !important"></li>
+			</ul>
+			<div class="more clear">
+				<a class="showmore" href="javascript:void('More')">Show More</a>
+			</div>		
+		</div>
         </article>
     </div>
 </div>
