@@ -343,7 +343,7 @@ main section header > *:last-child {
 }
 
 .phys-comments p {
-    margin-top: 0;
+    margin-top: 0.7em;
     margin-bottom: 0;
     width: 70%;
     margin-left: 2em;
