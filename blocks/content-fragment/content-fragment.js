@@ -155,7 +155,7 @@ export default async function decorate(block) {
 			<ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Medical School</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="120546">
-					<span>${cfReq?.medicalSchool}<br></span>
+					<span>${cfReq?.medicalSchool}</span>
 				</li>
 			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Fellowship</strong></li>
@@ -165,7 +165,7 @@ export default async function decorate(block) {
 			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Residency</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="121563">
-					<span>${cfReq?.residency.html}<br></span>
+					<span>${cfReq?.residency.html}</span>
 				</li>
 			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Board Certification</strong></li>
