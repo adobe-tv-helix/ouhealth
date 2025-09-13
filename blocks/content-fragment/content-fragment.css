@@ -213,11 +213,38 @@ h3, .title-style-3 {
 [class*='flex-'][class*='-reverse'] {
     flex-direction: row-reverse;
 }
+/*
 [class*='flex-'][class*='-wrap'] {
     flex-wrap: wrap;
 }
+    */
 
 .two-col-container .content-zone {
     flex: 0 1 auto;
     width: 62.898%;
+}
+
+.two-col-container .side-zone > *:last-child {
+    margin-bottom: 0;
+}
+
+main section header {
+    text-align: left;
+}
+
+section header {
+    font-weight: 400;
+    margin: 0;
+}
+
+main section header > *:last-child {
+    margin-bottom: 0;
+}
+
+.title-style-3 {
+    font-size: 1.33rem;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--primary-color);
 }
