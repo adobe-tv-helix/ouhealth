@@ -171,7 +171,6 @@ export default async function decorate(block) {
 			<strong class="title-style-2">Medical Interests</strong>
 				<strong class="title-style-5" role="heading" aria-level="3">Areas of Interest:</strong>
                 ${cfReq?.areasOfInterest.html}
-				<ul><li>Pleural Disease</li><li>Lung Cancer</li><li>COPD/Asthma</li><li>Point of Care Ultrasonography</li></ul>
 		</div>
 		
 		<input type="hidden" class="ui-cms-input" id="PhysicianContent_ITM114341_isReviews__edit_" name="PhysicianContent$ITM114341$isReviews$_edit_" value="">
@@ -198,11 +197,10 @@ export default async function decorate(block) {
 							background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
 							background-size: 200% 100%;
 					">
-					<img src="/images/panel/star-ratings.png" alt="Rating: 5.00">
+					<img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="Rating: 5.00">
+				    </div>
 				</div>
-							
-						</div>
-						<p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
+				<p>I love Dr. Tony Abdo. He is so kind and he is truly compassionate.</p>
 						
 							<div class="all-the-schema" style="display:none;">
 								<span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
