@@ -296,3 +296,15 @@ main section header > *:last-child {
 .content-style ul:not([class*="flex"]) li {
     padding-left: .889rem;
 }
+
+.content-style ul:not([class*="flex"]) li:before {
+    content: '';
+    background-color: var(--quarternary-color);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: .46rem;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
