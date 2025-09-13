@@ -148,17 +148,22 @@ export default async function decorate(block) {
                 <li class="half mar-e-tiny" data-item="i" data-key="120546">
 					<span>${cfReq?.medicalSchool}</span>
 				</li>
-			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
+			</ul>
+            <ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Fellowship</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="121234">
 					<span>${cfReq?.fellowship.html}</span>
 				</li>
-			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
+			</ul>
+            ${cfReq?.residency ? `
+            <ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Residency</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="121563">
 					<span>${cfReq?.residency.html}</span>
 				</li>
-			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
+			</ul>
+            ` : ''}
+            <ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
 				<li class="full"><strong class="title-style-3 full">Board Certification</strong></li>
                 <li class="half mar-e-tiny" data-item="i" data-key="122137">
 					<strong class="title-style-5" role="heading" aria-level="3">${cfReq?.boardCertification}</strong>
@@ -166,12 +171,13 @@ export default async function decorate(block) {
 				</li>
 			</ul>
 		</div>
-	
+        ${cfReq?.areasOfInterest ? `
 		<div class="content-style">
 			<strong class="title-style-2">Medical Interests</strong>
 				<strong class="title-style-5" role="heading" aria-level="3">Areas of Interest:</strong>
                 ${cfReq?.areasOfInterest.html}
 		</div>
+        ` : ''}
 		
 		<input type="hidden" class="ui-cms-input" id="PhysicianContent_ITM114341_isReviews__edit_" name="PhysicianContent$ITM114341$isReviews$_edit_" value="">
         <input type="hidden" class="ui-cms-input" id="PhysicianContent_ITM114341_isReviews__command_" name="PhysicianContent$ITM114341$isReviews$_command_" value="">
