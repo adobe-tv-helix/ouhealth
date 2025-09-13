@@ -181,7 +181,7 @@ export default async function decorate(block) {
 			<a name="Reviews"></a>
 			<h2>Reviews</h2>
 			<ul id="physicianSchema">
-                <li class="cms-repeater-placeholder" style="display:none !important"></li><li class="full flex-between-top-between" data-item="i" data-key="1502383389">
+                <li class="full flex-between-top-between" data-item="i" data-key="1502383389">
 				    <span class="review-date">08/16/2025</span>
 				    <div class="stars-cont flex-middle-start">
 							
