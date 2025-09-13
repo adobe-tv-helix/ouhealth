@@ -316,3 +316,7 @@ main section header > *:last-child {
 .content-style > .title-style-5:not([class*="mar-t"]) {
     margin-top: 1.3rem;
 }
+
+.mar-t-huge {
+    margin-top: var(--spacing-huge);
+}
