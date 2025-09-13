@@ -144,42 +144,35 @@ export default async function decorate(block) {
 		<div id="PhysicianContent_ITM114341_PhysEducation" class="phys-education content-style mar-t-3 ui-repeater">
 			<strong class="title-style-2">Health Education</strong>
 			<ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
-				<li class="full"><strong class="title-style-3 full">Medical School</strong></li><li class="half mar-e-tiny" data-item="i" data-key="120546">
-					
-					<span>Lebanese University<br></span>
+				<li class="full"><strong class="title-style-3 full">Medical School</strong></li>
+                <li class="half mar-e-tiny" data-item="i" data-key="120546">
+					<span>${cfReq?.medicalSchool}<br></span>
 				</li>
 			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
-				<li class="full"><strong class="title-style-3 full">Fellowship</strong></li><li class="half mar-e-tiny" data-item="i" data-key="121234">
-					
-					<span>OU College of Medicine<br>Oklahoma City, OK<br></span>
+				<li class="full"><strong class="title-style-3 full">Fellowship</strong></li>
+                <li class="half mar-e-tiny" data-item="i" data-key="121234">
+					<span>${cfReq?.fellowship.html}<br></span>
 				</li>
 			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
-				<li class="full"><strong class="title-style-3 full">Residency</strong></li><li class="half mar-e-tiny" data-item="i" data-key="121563">
-					
-					<span>Roger Williams Medical Center - Boston University<br>Boston, MA<br></span>
+				<li class="full"><strong class="title-style-3 full">Residency</strong></li>
+                <li class="half mar-e-tiny" data-item="i" data-key="121563">
+					<span>${cfReq?.residency.html}<br></span>
 				</li>
 			</ul><ul class="full flex-spaced-wrap-block-500 items-4 mar-t-tiny">
-				<li class="full"><strong class="title-style-3 full">Board Certification</strong></li><li class="half mar-e-tiny" data-item="i" data-key="122137">
-					<strong class="title-style-5" role="heading" aria-level="3">American Board of Internal Medicine</strong>
+				<li class="full"><strong class="title-style-3 full">Board Certification</strong></li>
+                <li class="half mar-e-tiny" data-item="i" data-key="122137">
+					<strong class="title-style-5" role="heading" aria-level="3">${cfReq?.boardCertification}</strong>
 					<span></span>
 				</li>
 			</ul>
 		</div>
 	
-	
-	
 		<div class="content-style">
 			<strong class="title-style-2">Medical Interests</strong>
-			
 				<strong class="title-style-5" role="heading" aria-level="3">Areas of Interest:</strong>
+                ${cfReq?.areasOfInterest.html}
 				<ul><li>Pleural Disease</li><li>Lung Cancer</li><li>COPD/Asthma</li><li>Point of Care Ultrasonography</li></ul>
-			
-			
-			
-			
 		</div>
-	
-	
 		
 			<input type="hidden" class="ui-cms-input" id="PhysicianContent_ITM114341_isReviews__edit_" name="PhysicianContent$ITM114341$isReviews$_edit_" value="">
 <input type="hidden" class="ui-cms-input" id="PhysicianContent_ITM114341_isReviews__command_" name="PhysicianContent$ITM114341$isReviews$_command_" value="">
