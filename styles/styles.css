@@ -34,6 +34,7 @@
   --body-font-size-s: 19px;
   --body-font-size-xs: 17px;
   --spacing-tiny: 0.56rem;
+  --spacing-variable: 1.67rem;
 
   /* heading sizes */
   --heading-font-size-xxl: 55px;
@@ -155,7 +156,7 @@ ul {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  padding-inline-start: 40px;
+  /*padding-inline-start: 40px;*/
   unicode-bidi: isolate;
 }
 

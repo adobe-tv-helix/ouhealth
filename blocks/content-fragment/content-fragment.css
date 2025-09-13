@@ -252,3 +252,47 @@ main section header > *:last-child {
 .two-col-container .side-zone > *:not(form), .two-col-container .side-zone > form > *, .two-col-container .side-zone .aside-margin {
     margin-bottom: 2.78rem;
 }
+
+.physician-locations {
+    padding-left: 40px;    /* NOTE: unable to match with website? */
+}
+
+.system-entry > .content-style:not([class*="mar-t"]) {
+    margin-top: calc(var(--spacing-variable) * 1.67);
+}
+
+.title-style-2 {
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.27;
+    color: var(--secondary-color);
+    font-family: var(--font-1);
+}
+
+.title-style-5 {
+    font-size: 1.111rem;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.content-style ul:not([class*="flex-"]) {
+    list-style-type: none;
+    padding: 0 0 0 0;
+}
+
+.content-style ul:not([class*="mar-"]), .content-style ol {
+    line-height: 1.33;
+    margin: 1em 0;
+    font-style: normal;
+}
+
+.content-style>:last-child {
+    margin-bottom: 0 !important;
+}
+
+.content-style ul:not([class*="flex"]) li {
+    padding-left: .889rem;
+}
