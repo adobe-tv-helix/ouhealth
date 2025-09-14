@@ -184,3 +184,7 @@ input {
     box-shadow: none;
     appearance: none;
 }
+
+.find-a-doctor .input-text .ui-cms-input {
+    width: 340px;
+}
