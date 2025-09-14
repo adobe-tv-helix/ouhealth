@@ -390,3 +390,8 @@ address {
     display: block;
     font-style: normal;
 }
+
+.link-style-1 img {
+    width: .889rem;
+    height: .556rem;
+}

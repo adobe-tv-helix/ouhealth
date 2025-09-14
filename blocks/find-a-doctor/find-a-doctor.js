@@ -135,7 +135,7 @@ async function renderDoctorResults(doctorResultsList) {
 									</div>
 								</div>
 							</div>
-							<span class="link-style-1 mar-t-1">View Profile</span>
+							<span class="link-style-1 mar-t-1"><img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="View Profile">View Profile</span>
 						</div>
 					</a>`;
     doctorResultsList.appendChild(indDoctor);
