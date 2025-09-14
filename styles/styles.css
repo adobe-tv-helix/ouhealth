@@ -38,6 +38,7 @@
   --body-font-size-xs: 17px;
   --spacing-tiny: 0.56rem;
   --spacing-variable: 1.67rem;
+  --spacing-tiny: 0.56rem;
   --spacing-huge: 3rem;
 
   /* heading sizes */
@@ -55,6 +56,11 @@
   --transit-1: .4s ease 0s;
   --grid-large-spacing: 3rem;
   --grid-spacing: 1.667rem;
+
+  --radial-border: 0;
+  --section-vertical-padding: 2.778em;
+  --transit-1: .4s ease 0s;
+  --transit-2: .7s ease 0s;
 }
 
 /* fallback fonts */

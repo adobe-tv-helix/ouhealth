@@ -362,3 +362,51 @@ main section header > *:last-child {
     display: block;
     font-family: var(--font-1);
 }
+
+/* results section */
+.filter-header + .system-padding {
+    padding-top: 4.167rem;
+    padding-bottom: 5.556rem;
+}
+
+[class*='flex-'][class*='-middle'] {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+[class*='flex-'][class*='-between'], [class*='flex-'][class*='-spaced'], .items-spaced .item-spacing {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.mar-b-3 {
+    margin-bottom: calc(var(--spacing-variable) * 1.5);
+}
+
+.system-cards {
+    position: relative;
+    width: calc(100% + var(--grid-spacing));
+    left: calc(var(--grid-spacing) * -0.5);
+    align-items: stretch;
+    align-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.system-cards > [class*="item"][class*="half"] {
+    width: calc(50% - var(--grid-spacing));
+}
+
+.system-cards > [class*="item"] {
+    padding-bottom: 2.778rem;
+}
+
+.system-cards > [class*="item"] {
+    flex: 0 1 auto;
+    margin: calc(var(--grid-spacing) * .5);
+    position: relative;
+    border-radius: var(--radial-border);
+}
