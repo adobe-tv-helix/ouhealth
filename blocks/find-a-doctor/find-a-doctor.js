@@ -16,7 +16,7 @@ export default async function decorate(block) {
 						<li class="search third">
 							<label for="PhysicianSearch_HDR0_PhysicianName" id="LabelName">Search by Name</label>
 							<div class="input-text">
-								<input id="PhysicianSearch_HDR0_PhysicianName" autocomplete="off" type="text" placeholder="Doctor Name" class="ui-cms-input" name="PhysicianSearch$HDR0$PhysicianName" value="" data-history="PhysicianName" data-search="true">
+								<input id="PhysicianSearch_HDR0_PhysicianName" autocomplete="off" type="text" placeholder="Doctor Name" class="ui-cms-input-custom" name="PhysicianSearch$HDR0$PhysicianName" value="" data-history="PhysicianName" data-search="true">
 								<svg viewBox="0 0 36 36" data-use="/cms/svg/site/icon_search.36.svg" role="presentation" aria-hidden="true">
 									
 								
@@ -216,5 +216,5 @@ export default async function decorate(block) {
         </header>
     `;
     block.appendChild(searchResults);
-    
+
 }

@@ -185,6 +185,6 @@ input {
     appearance: none;
 }
 
-.find-a-doctor .input-text .ui-cms-input {
+.find-a-doctor .input-text .ui-cms-input-custom {
     width: 340px;
 }
