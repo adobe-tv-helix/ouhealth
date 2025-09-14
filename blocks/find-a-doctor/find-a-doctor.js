@@ -207,4 +207,14 @@ export default async function decorate(block) {
 			</div>
 		</div>
     `;
+
+    const searchResults = document.createElement('div');
+    searchResults.className = 'doctor-results main system-padding';
+    searchResults.innerHTML = `
+        <header class="mar-b-3 flex-between-middle" role="presentation">
+            <h2 class="title-style-2">All Doctors</h2>
+        </header>
+    `;
+    block.appendChild(searchResults);
+    
 }
