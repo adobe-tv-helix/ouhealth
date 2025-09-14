@@ -328,6 +328,14 @@ section picture img {
     padding-left: 1.67em;
 }
 
+.inline-svg svg {
+    font-size: 1.1em;
+    color: var(--click1-color);
+    left: 0;
+    position: absolute;
+    top: 0.4rem;
+}
+
 .physician-feed.v1 [class*="item"] .info li.new-patients {
     margin-top: .722rem !important;
 }
@@ -370,4 +378,15 @@ section picture img {
     line-height: 1;
     margin-bottom: .278rem;
     position: relative;
+}
+
+.system-cards > [class*="item"] address {
+    line-height: 1.5;
+    margin: 1.111rem 0 .5556rem !important;
+    color: var(--text-color);
+}
+
+address {
+    display: block;
+    font-style: normal;
 }

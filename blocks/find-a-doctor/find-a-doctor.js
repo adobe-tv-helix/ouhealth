@@ -126,7 +126,7 @@ async function renderDoctorResults(doctorResultsList) {
 											<div class="starz" style="
 												background-position: -92% 0;
 												background-image: linear-gradient(to right, #ffffff 50%, #f0d283 50%);
-												background-size: 200% 100%;"><img src="/images/panel/star-ratings.png" alt="">
+												background-size: 200% 100%;"><img src="https://www.ouhealth.com/images/panel/star-ratings.png" alt="">
 											</div>
 										</div>
 										<div class="ds-xofy"><span class="ds-average">4.6 </span><span class="ds-average-max">out of 5</span></div>
