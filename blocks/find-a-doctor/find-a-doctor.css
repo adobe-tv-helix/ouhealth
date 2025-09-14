@@ -188,3 +188,186 @@ input {
 .find-a-doctor .input-text .ui-cms-input-custom {
     width: 340px;
 }
+
+/* results section */
+.filter-header + .system-padding {
+    padding-top: 4.167rem;
+    padding-bottom: 5.556rem;
+}
+
+[class*='flex-'][class*='-middle'] {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+[class*='flex-'][class*='-between'], [class*='flex-'][class*='-spaced'], .items-spaced .item-spacing {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.mar-b-3 {
+    margin-bottom: calc(var(--spacing-variable) * 1.5);
+}
+
+.system-cards {
+    position: relative;
+    width: calc(100% + var(--grid-spacing));
+    left: calc(var(--grid-spacing) * -0.5);
+    align-items: stretch;
+    align-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.system-cards > [class*="item"][class*="half"] {
+    width: calc(50% - var(--grid-spacing));
+}
+
+.system-cards > [class*="item"] {
+    padding-bottom: 2.778rem;
+}
+
+.system-cards > [class*="item"] {
+    flex: 0 1 auto;
+    margin: calc(var(--grid-spacing) * .5);
+    position: relative;
+    border-radius: var(--radial-border);
+}
+
+.system-cards > [class*="item"] a[class*="flex-"] > figure, .system-cards > [class*="item"] div[class*="flex-"] > figure {
+    width: 22%;
+    padding-bottom: 27.5%;
+}
+
+.system-cards > [class*="item"] figure, figure.system-card:not(.play), .rel-fragments li figure {
+    height: 0;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.system-cards > [class*="item"] figure, figure.system-card {
+    position: relative;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+}
+
+section picture:not(.img) {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+section picture img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    min-height: calc(100% + 1px);
+    object-fit: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.system-cards > [class*="item"] a[class*="flex-"] > div, .system-cards > [class*="item"] div[class*="flex-"] > div {
+    width: 73%;
+}
+
+.title-style-5 {
+    font-size: 1.111rem;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+[class*="title-style-"] {
+    display: block;
+}
+
+.system-cards > [class*="item"] .note-style-1 {
+    line-height: 1;
+}
+
+.note-style-1 {
+    font-size: 0.889em;
+    font-weight: 400;
+    color: var(--primary-color);
+    display: block;
+    font-family: var(--font-1);
+}
+
+.mar-t-1 {
+    margin-top: calc(var(--spacing-variable) * .5);
+}
+
+.physician-feed.v1 [class*="item"] .info li.phone, .physician-feed.v1 [class*="item"] .info li.new-patients {
+    display: list-item;
+}
+
+*:not([class*="flex"]) > .inline-svg {
+    margin-top: 0.2em;
+}
+
+.inline-svg {
+    color: var(--text-color);
+    position: relative;
+    padding-left: 1.67em;
+}
+
+.physician-feed.v1 [class*="item"] .info li.new-patients {
+    margin-top: .722rem !important;
+}
+
+.link-style-1 {
+    position: relative;
+    font-size: 1.111rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    color: var(--text-color);
+    transition: var(--transit-1);
+    display: inline-block;
+    font-family: var(--font-1);
+    z-index: 1;
+    padding-left: 1.167rem;
+    text-decoration: none !important;
+}
+
+.npr-scores-cont .ds-summary {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--text-color);
+}
+
+.npr-scores-cont .ds-summary .ds-stars {
+    widtH: 88px !important;
+}
+
+.npr-scores-cont .ds-summary .ds-xofy {
+    font-weight: 700;
+}
+
+.npr-scores-cont .ds-summary .ds-title, .npr-scores-cont .ds-summary .ds-title + div, .npr-scores-cont .ds-summary .ds-xofy {
+    width: 100%;
+}
+
+.npr-scores-cont .ds-summary .ds-ratings, .npr-scores-cont .ds-summary .ds-comments {
+    margin-right: .278rem;
+    line-height: 1;
+    margin-bottom: .278rem;
+    position: relative;
+}
