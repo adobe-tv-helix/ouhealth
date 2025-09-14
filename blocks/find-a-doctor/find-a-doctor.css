@@ -116,7 +116,7 @@ fieldset li > label {
     position: relative;
 }
 
-.find-a-doctor .input-text input[type='text'], .input-text select {
+.input-text input[type='text'], .input-text select {
     display: block;
     padding: 0.611rem 1.11rem .444rem;
     width: 100%;
