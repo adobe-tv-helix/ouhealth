@@ -176,7 +176,7 @@ input {
     display: none !important;
 }
 
-select {
+.find-a-doctor select {
     border: none;
     border-radius: 0;
     background-image: none;
