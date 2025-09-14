@@ -116,7 +116,7 @@ fieldset li > label {
     position: relative;
 }
 
-.input-text input[type='text'] {
+.input-text input[type='text'], .input-text select {
     display: block;
     padding: 0.611rem 1.11rem .444rem;
     width: 100%;
@@ -160,4 +160,18 @@ input {
     background-image: none;
     resize: none;
     box-shadow: none;
+}
+
+.input-text ::-webkit-input-placeholder, .input-text select {
+    opacity: 1;
+    color: var(--text-color);
+}
+
+.input-text select option {
+    text-transform: none;
+    text-align: left;
+}
+
+.hide {
+    display: none !important;
 }
