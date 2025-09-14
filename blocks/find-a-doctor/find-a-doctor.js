@@ -81,10 +81,11 @@ export default async function decorate(block) {
 async function renderDoctorResults(doctorResultsList) {
     const indDoctor = document.createElement('li');
     indDoctor.className = 'half item-1';
-    indDoctor.innerHTML = `<a href="/find-a-doctor/tony-abdo-md/" class="flex-top-between-block-500">
+    indDoctor.innerHTML = `
+        <a href="https://www.ouhealth.com/find-a-doctor/tony-abdo-md/" class="flex-top-between-block-500">
 						<figure role="presentation">
 							<picture>
-								<img loading="lazy" alt="" src="/cms/thumbnails/00/400x500//images/physicians/Tony-Abdo-MD.jpg">
+								<img loading="lazy" alt="" src="https://www.ouhealth.com/cms/thumbnails/00/400x500//images/physicians/Tony-Abdo-MD.jpg">
 								
 							</picture>
 						</figure>
