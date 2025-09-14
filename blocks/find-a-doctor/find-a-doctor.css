@@ -351,7 +351,7 @@ section picture img {
     display: inline-block;
     font-family: var(--font-1);
     z-index: 1;
-    padding-left: 1.167rem;
+    /*padding-left: 1.167rem;*/
     text-decoration: none !important;
 }
 
