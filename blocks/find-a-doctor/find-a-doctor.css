@@ -116,7 +116,7 @@ fieldset li > label {
     position: relative;
 }
 
-.input-text input[type='text'], .input-text select {
+.find-a-doctor .input-text input[type='text'], .input-text select {
     display: block;
     padding: 0.611rem 1.11rem .444rem;
     width: 100%;
@@ -127,7 +127,7 @@ fieldset li > label {
     font-weight: 400;
     line-height: 1.2;
     transition: background-color .4s ease 0s, border-color .4s ease 0s, color .4s ease 0s;
-    border-bottom: solid 2px var(--primary-color);
+    border-bottom: solid 2px var(--primary-color) !important;
     font-family: var(--font-2);
 }
 
