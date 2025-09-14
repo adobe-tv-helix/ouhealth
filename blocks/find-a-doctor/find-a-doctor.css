@@ -182,4 +182,5 @@ input {
     background-image: none;
     resize: none;
     box-shadow: none;
+    appearance: none;
 }
