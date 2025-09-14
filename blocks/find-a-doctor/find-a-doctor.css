@@ -175,3 +175,11 @@ input {
 .hide {
     display: none !important;
 }
+
+select {
+    border: none;
+    border-radius: 0;
+    background-image: none;
+    resize: none;
+    box-shadow: none;
+}
