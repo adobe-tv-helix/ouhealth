@@ -340,7 +340,7 @@ section picture img {
     margin-top: .722rem !important;
 }
 
-.link-style-1 {
+.link-style-1, .link-style-2, .link-style-3 {
     position: relative;
     font-size: 1.111rem;
     font-weight: 400;
