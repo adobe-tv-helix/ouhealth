@@ -153,3 +153,11 @@ fieldset li svg {
     font-size: .722rem;
     color: var(--click1-color);
 }
+
+input {
+    border: none;
+    border-radius: 0;
+    background-image: none;
+    resize: none;
+    box-shadow: none;
+}
