@@ -24,9 +24,11 @@
   --off-color: #f5f5f5;
   --secondary-color: #2b2e35;
   --quarternary-color: #7eddd3;
+  --white-color: #ffffff;
 
   /* fonts */
   --font-1: linotype-sabon, sans-serif;
+  --font-2: proxima-nova, sans-serif;
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
@@ -51,6 +53,8 @@
 
   --main-padding: 2.5%;
   --transit-1: .4s ease 0s;
+  --grid-large-spacing: 3rem;
+  --grid-spacing: 1.667rem;
 }
 
 /* fallback fonts */

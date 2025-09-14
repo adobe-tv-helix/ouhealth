@@ -1,0 +1,155 @@
+.filter-header {
+    background-color: var(--off-color);
+    position: relative;
+    padding: 2.833rem 0 1.833rem;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    margin: 0 auto;
+    max-width: calc(69.778rem + (var(--main-padding) * 2));
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
+    position: relative;
+}
+
+.filter-header header {
+    padding-bottom: 0;
+}
+
+.main section header {
+    text-align: left;
+    font-weight: 400;
+    margin: 0;
+}
+
+.main section header > *:last-child {
+    margin-bottom: 0;
+}
+
+.main h1 {
+    font-size: 3.333rem;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 1.16;
+    color: var(--primary-color);
+}
+
+.filter-header fieldset {
+    overflow: visible;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+
+fieldset > legend {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+[class*='flex-'][class*='-grid'] {
+    position: relative;
+    width: calc(100% + var(--grid-spacing));
+    left: calc(var(--grid-spacing) * -.5);
+}
+
+[class*='flex-'][class*='-wrap'] {
+    flex-wrap: wrap;
+}
+
+[class*='flex-'][class*='-between'], [class*='flex-'][class*='-spaced'], .items-spaced .item-spacing {
+    justify-content: space-between;
+}
+
+[class*='flex-'] {
+    align-items: stretch;
+    align-content: space-around;
+    display: flex;
+}
+
+[class*='flex-'][class*='-grid'] > li.third {
+    width: calc(33.333% - var(--grid-large-spacing));
+    max-width: calc(33.333% - var(--grid-spacing));
+}
+
+[class*='flex-'][class*='-grid'] > li {
+    margin: calc(var(--grid-spacing) * .5);
+    flex: 1 1 auto;
+}
+
+fieldset > ul > li {
+    position: relative;
+    font-size: inherit;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.filter-header .search-form li > label {
+    line-height: 1;
+    margin: .5rem 0 .3889rem;
+}
+
+label:not(.hide):not([class*="title-style"]), .label-style {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+    color: var(--primary-color);
+}
+
+fieldset li > label {
+    position: relative;
+}
+
+.input-text {
+    position: relative;
+}
+
+.input-text input[type='text'] {
+    display: block;
+    padding: 0.611rem 1.11rem .444rem;
+    width: 100%;
+    background-color: var(--white-color);
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    transition: background-color .4s ease 0s, border-color .4s ease 0s, color .4s ease 0s;
+    border-bottom: solid 2px var(--primary-color);
+    font-family: var(--font-2);
+}
+
+.filter-header fieldset ul li.search svg {
+    font-size: .833rem;
+    color: var(--click1-color);
+}
+
+svg[data-use] {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
+
+fieldset li svg {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: .722rem;
+    color: var(--click1-color);
+}
