@@ -203,6 +203,7 @@ async function renderDoctorResults(searchResults, allDoctors) {
 		doctorResultsList.appendChild(indDoctor);
 	});
 
+	searchResults.innerHTML = '';
 	searchResults.appendChild(doctorResultsList);
 }
 
