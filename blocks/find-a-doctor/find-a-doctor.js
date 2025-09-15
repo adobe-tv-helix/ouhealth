@@ -218,7 +218,7 @@ console.log('returning contentfragments data 238209', data.items);
 async function fetchDoctorsBySelectedGender(selectedGender) {
 	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
 	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
-	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByGender';
+	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByGenderFilter';
 
 	const isAuthor = isAuthorEnvironment();
 	const url = window?.location?.origin?.includes('author')
