@@ -16,5 +16,11 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  /* add numerical order to sections */
+  const sections = footer.querySelectorAll('.section');
+  sections.forEach((section, index) => {
+    section.classList.add(`section-${index + 1}`);
+  });
+
   block.append(footer);
 }
