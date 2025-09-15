@@ -407,3 +407,7 @@ address {
 .find-a-doctor .doctor-results header {
     height: unset;
 }
+
+.find-a-doctor .doctor-results h2 {
+    margin: unset;
+}
