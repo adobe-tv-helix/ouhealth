@@ -84,7 +84,7 @@ console.log('block config', config);
 			input.value = '';
 		});
 alert('filters cleared');
-		renderResultsContainer(searchResults);
+		const doctorResultsList = renderResultsContainer(searchResults);
     	renderDoctorResults(doctorResultsList, fetchAllDoctors());
 	});
 
@@ -92,8 +92,8 @@ alert('filters cleared');
 	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
 	genderSelect.addEventListener('change', (e) => {
 		e.preventDefault();
-		const selectedGender = e.target.value;
-		alert('selectedGender', selectedGender);
+		const selectedGender = this.value;
+		alert('selectedGender 2', selectedGender);
 		
 	});
 
@@ -109,7 +109,7 @@ alert('filters cleared');
     // doctorResultsList.className = 'system-cards items-25';
     // searchResults.appendChild(doctorResultsList);
 
-	renderResultsContainer(searchResults);
+	const doctorResultsList = renderResultsContainer(searchResults);
     renderDoctorResults(doctorResultsList, fetchAllDoctors());
 
     block.appendChild(searchResults);
@@ -119,6 +119,8 @@ async function renderResultsContainer(searchResults) {
 	const doctorResultsList = document.createElement('ul');
     doctorResultsList.className = 'system-cards items-25';
     searchResults.appendChild(doctorResultsList);
+
+	return doctorResultsList;
 }
 
 async function renderDoctorResults(doctorResultsList, allDoctors) {
