@@ -167,11 +167,20 @@ async function fetchAllDoctors() {
 	const options = { credentials: 'include' };
 
 	const cfList = await fetch(url, options)
-		.then((response) => {
-			let data = response.json();
-			console.log('response json', response.json());
-			return data.data?.items || [];
-		});
+		.then((response) => response.json())
+		.then((contentfragments) => {
+			let data = '';
+			console.log('contentfragments', contentfragments);
+			if (contentfragments.data) {
+				data = contentfragments.data.items;
+			}
+			return data;
+    });
+		// .then((response) => {
+		// 	let data = response.json();
+		// 	console.log('response json', response.json());
+		// 	return data.data?.items || [];
+		// });
 
 	return cfList;
 }
