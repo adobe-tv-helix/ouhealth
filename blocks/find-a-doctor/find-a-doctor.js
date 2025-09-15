@@ -170,10 +170,10 @@ async function fetchAllDoctors() {
 		.then((response) => response.json())
 		.then((contentfragments) => {
 			let data = '';
-			console.log('contentfragments', contentfragments);
 			if (contentfragments.data) {
 				data = contentfragments.data.items;
 			}
+			console.log('returning contentfragments data', data);
 			return data;
     });
 		// .then((response) => {
