@@ -20,7 +20,7 @@ export default async function decorate(block) {
 					<legend>Provider Search</legend>
 					<ul class="flex-between-grid-spaced-break-1024-block-800-wrap full">
 						<li class="search third">
-							<label for="PhysicianSearch_HDR0_PhysicianName" id="LabelName">Search by Name</label>
+							<label for="PhysicianSearch_HDR0_PhysicianName" id="LabelName">${config?.filternamelabel || 'Search by Name'}</label>
 							<div class="input-text">
 								<input id="PhysicianSearch_HDR0_PhysicianName" autocomplete="off" type="text" placeholder="Doctor Name" class="ui-cms-input-custom" name="PhysicianSearch$HDR0$PhysicianName" value="" data-history="PhysicianName" data-search="true">
 								<svg viewBox="0 0 36 36" data-use="/cms/svg/site/icon_search.36.svg" role="presentation" aria-hidden="true">				
@@ -29,7 +29,7 @@ export default async function decorate(block) {
 							</div>
 						</li>
 						<li class="select third">
-							<label for="PhysicianSearch_HDR0_SpecialtyIDs" id="LabelService">Search by Specialty</label>
+							<label for="PhysicianSearch_HDR0_SpecialtyIDs" id="LabelService">${config?.filterspecialtylabel || 'Search by Specialty'}</label>
 							<div class="input-text">
 								<select id="PhysicianSearch_HDR0_SpecialtyIDs" autocomplete="off" class="ui-cms-select ui-cms-input" name="PhysicianSearch$HDR0$SpecialtyIDs" data-history="SpecialtyIDs" data-history-qs="Specialty" data-search="true">
 									<option class="hide" style="display:none;" value="287068" id="FindAPhysician_1" data-page=""></option>
@@ -46,7 +46,7 @@ export default async function decorate(block) {
 							</div>
 						</li>
 						<li class="select third">
-							<label for="PhysicianSearch_HDR0_Gender" id="LabelGender">Search by Gender</label>
+							<label for="PhysicianSearch_HDR0_Gender" id="LabelGender">${config?.filtergenderlabel || 'Search by Gender'}</label>
 							<div class="input-text">
 								<select id="PhysicianSearch_HDR0_Gender" autocomplete="off" class="ui-cms-select ui-cms-input" name="PhysicianSearch$HDR0$Gender" data-history="Gender" data-search="true">
 									<option value="" selected="">Any</option>
@@ -76,7 +76,7 @@ export default async function decorate(block) {
     searchResults.className = 'doctor-results main system-padding';
     searchResults.innerHTML = `
         <header class="mar-b-3 flex-between-middle" role="presentation">
-            <h2 class="title-style-2">All Doctors</h2>
+            <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
         </header>
     `;
 

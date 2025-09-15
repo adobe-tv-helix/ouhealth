@@ -260,6 +260,48 @@
         "name": "filterNameLabel",
         "label": "Search by Name Label",
         "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filterDoctorNamePlaceholder",
+        "label": "Doctor Name Placeholder",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filterSpecialtyLabel",
+        "label": "Search by Specialty Label",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filterSpecialtyPlaceholder",
+        "label": "All Specialties Placeholder",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filterGenderLabel",
+        "label": "Search by Gender Label",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filterGenderPlaceholder",
+        "label": "Gender Placeholder",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "resultsAllDoctorsLabel",
+        "label": "All Doctors Results Label",
+        "value": ""
       }
     ]
   }
