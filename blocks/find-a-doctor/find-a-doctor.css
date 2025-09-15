@@ -1,3 +1,9 @@
+main > .section > .find-a-doctor-wrapper {
+    max-width: 100% !important;
+    margin: auto;
+    padding: 0 24px;
+}
+
 .filter-header {
     background-color: var(--off-color);
     position: relative;
