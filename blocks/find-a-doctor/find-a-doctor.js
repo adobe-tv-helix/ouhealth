@@ -78,7 +78,7 @@ console.log('block config', config);
     //         <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
     //     </header>
     // `;
-	const searchResults = renderSearchResultsPanel();
+	const searchResults = renderSearchResultsPanel(config);
 
 	const doctorQueryResults = await fetchAllDoctors();
     renderDoctorResults(searchResults, doctorQueryResults);
@@ -98,7 +98,7 @@ console.log('block config', config);
 			input.value = '';
 		});
 	alert('filters cleared');
-		const searchResultsPnl = renderSearchResultsPanel();
+		const searchResultsPnl = renderSearchResultsPanel(config);
 		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResults(searchResultsPnl, doctorQueryResults);
 		block.appendChild(searchResultsPnl);
@@ -110,14 +110,14 @@ console.log('block config', config);
 		e.preventDefault();
 		const selectedGender = e.target.value;
 alert('selectedGender 3 ' + selectedGender);
-		const searchResultsPnl = renderSearchResultsPanel();
+		const searchResultsPnl = renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
 		block.appendChild(searchResultsPnl);
 	});
 }
 
-async function renderSearchResultsPanel() {
+async function renderSearchResultsPanel(config) {
 	const searchResults = document.createElement('div');
     searchResults.className = 'doctor-results main system-padding';
 	searchResults.innerHTML = '';
