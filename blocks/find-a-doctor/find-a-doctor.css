@@ -16,6 +16,7 @@
 
 .filter-header header {
     padding-bottom: 0;
+    height: unset;
 }
 
 .main section header {
@@ -35,6 +36,7 @@
     letter-spacing: 0;
     line-height: 1.16;
     color: var(--primary-color);
+    margin: unset;
 }
 
 .filter-header fieldset {
