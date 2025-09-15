@@ -110,6 +110,7 @@ console.log('block config', config);
 		e.preventDefault();
 		const selectedGender = e.target.value;
 alert('selectedGender 3 ' + selectedGender);
+		searchResults.innerHTML = '';
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
@@ -131,7 +132,6 @@ async function renderSearchResultsPanel(config) {
 }
 
 async function renderDoctorResults(searchResults, allDoctors) {
-	searchResults.innerHTML = '';
 	const doctorResultsList = document.createElement('ul');
 	doctorResultsList.innerHTML = '';
     doctorResultsList.className = 'system-cards items-25';
