@@ -100,8 +100,8 @@ console.log('block config', config);
 	alert('filters cleared');
 		const searchResultsPnl = renderSearchResultsPanel();
 		const doctorQueryResults = await fetchAllDoctors();
-		renderDoctorResults(searchResults, doctorQueryResults);
-		block.appendChild(searchResults);
+		renderDoctorResults(searchResultsPnl, doctorQueryResults);
+		block.appendChild(searchResultsPnl);
 	});
 	
 	// gender select listener
@@ -112,8 +112,8 @@ console.log('block config', config);
 alert('selectedGender 3 ' + selectedGender);
 		const searchResultsPnl = renderSearchResultsPanel();
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
-		renderDoctorResults(searchResults, doctorQueryByGenderResults);
-		block.appendChild(searchResults);
+		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
+		block.appendChild(searchResultsPnl);
 	});
 }
 
