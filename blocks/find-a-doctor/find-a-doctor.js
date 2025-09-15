@@ -101,7 +101,7 @@ console.log('block config', config);
 			input.value = '';
 		});
 	alert('filters cleared');
-		const doctorQueryResults = fetchAllDoctors();
+		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResults(searchResults, doctorQueryResults);
 	});
 	
@@ -111,7 +111,7 @@ console.log('block config', config);
 		e.preventDefault();
 		const selectedGender = e.target.value;
 		alert('selectedGender 2 ' + selectedGender);
-		const doctorQueryByGenderResults = fetchDoctorsBySelectedGender(selectedGender);
+		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResults, doctorQueryByGenderResults);
 	});
 }
