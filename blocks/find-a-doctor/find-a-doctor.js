@@ -95,7 +95,7 @@ async function renderAllDoctorResults(doctorResultsList) {
 			<a href="${doctor.doctorPage?._path}" class="flex-top-between-block-500">
 				<figure role="presentation">
 					<picture>
-						<img loading="lazy" alt="" src="${doctor.image?._path}">			
+						<img loading="lazy" alt="" src="${doctor.imagePath?._path}">			
 					</picture>
 				</figure>
 				<div class="info">
@@ -173,14 +173,9 @@ async function fetchAllDoctors() {
 			if (contentfragments.data && contentfragments.data.doctorList) {
 				data = contentfragments.data.doctorList;
 			}
-			console.log('returning contentfragments data 238209', data.items);
+console.log('returning contentfragments data 238209', data.items);
 			return data.items;
     });
-		// .then((response) => {
-		// 	let data = response.json();
-		// 	console.log('response json', response.json());
-		// 	return data.data?.items || [];
-		// });
 
 	return cfList;
 }
