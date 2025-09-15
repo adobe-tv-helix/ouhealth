@@ -403,3 +403,7 @@ address {
     width: .889rem;
     height: .556rem;
 }
+
+.find-a-doctor .doctor-results header {
+    height: unset;
+}
