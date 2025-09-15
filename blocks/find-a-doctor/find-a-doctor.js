@@ -1,8 +1,13 @@
+import { readBlockConfig } from '../../scripts/aem.js';
+
 /**
  *
  * @param {Element} block
  */
 export default async function decorate(block) {
+	const config = readBlockConfig(block);
+	console.log('block config', config);
+	
     block.innerHTML = `
         <div class="filter-header">
 			<div class="main slider">
