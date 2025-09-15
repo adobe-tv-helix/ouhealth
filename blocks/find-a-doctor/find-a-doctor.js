@@ -110,17 +110,10 @@ console.log('block config', config);
 	genderSelect.addEventListener('change', (e) => {
 		e.preventDefault();
 		const selectedGender = e.target.value;
-		alert('selectedGender 2' + selectedGender);
-			
+		alert('selectedGender 2 ' + selectedGender);
+		const doctorQueryByGenderResults = fetchDoctorsBySelectedGender(selectedGender);
+		renderDoctorResults(searchResults, doctorQueryByGenderResults);
 	});
-}
-
-async function renderResultsContainer(searchResults) {
-	const doctorResultsList = document.createElement('ul');
-    doctorResultsList.className = 'system-cards items-25';
-    searchResults.appendChild(doctorResultsList);
-
-	return doctorResultsList;
 }
 
 async function renderDoctorResults(searchResults, allDoctors) {
