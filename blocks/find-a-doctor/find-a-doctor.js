@@ -103,6 +103,7 @@ console.log('block config', config);
 	alert('filters cleared');
 		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResults(searchResults, doctorQueryResults);
+		block.appendChild(searchResults);
 	});
 	
 	// gender select listener
@@ -113,6 +114,7 @@ console.log('block config', config);
 alert('selectedGender 3 ' + selectedGender);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResults, doctorQueryByGenderResults);
+		block.appendChild(searchResults);
 	});
 }
 
@@ -184,7 +186,6 @@ async function renderDoctorResults(searchResults, allDoctors) {
 		doctorResultsList.appendChild(indDoctor);
 	});
 
-	// searchResults.innerHTML = '';
 	searchResults.appendChild(doctorResultsList);
 }
 
