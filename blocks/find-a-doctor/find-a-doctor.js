@@ -22,7 +22,7 @@ export default async function decorate(block) {
 						<li class="search third">
 							<label for="PhysicianSearch_HDR0_PhysicianName" id="LabelName">${config?.filternamelabel || 'Search by Name'}</label>
 							<div class="input-text">
-								<input id="PhysicianSearch_HDR0_PhysicianName" autocomplete="off" type="text" placeholder="Doctor Name" class="ui-cms-input-custom" name="PhysicianSearch$HDR0$PhysicianName" value="" data-history="PhysicianName" data-search="true">
+								<input id="PhysicianSearch_HDR0_PhysicianName" autocomplete="off" type="text" placeholder="${config?.filterdoctornameplaceholder || 'Doctor Name'}" class="ui-cms-input-custom" name="PhysicianSearch$HDR0$PhysicianName" value="" data-history="PhysicianName" data-search="true">
 								<svg viewBox="0 0 36 36" data-use="/cms/svg/site/icon_search.36.svg" role="presentation" aria-hidden="true">				
 	                            <path d="M25.908 23.187L36 33.278L33.278 36L23.187 25.908C20.758 27.763 17.725 28.866 14.433 28.866C6.462 28.866 0 22.404 0 14.433C0 6.462 6.462 0 14.433 0C22.404 0 28.866 6.462 28.866 14.433C28.866 17.725 27.763 20.758 25.908 23.187L25.908 23.187ZM14.433 25.017C20.279 25.017 25.017 20.279 25.017 14.433C25.017 8.586 20.279 3.848 14.433 3.848C8.586 3.848 3.848 8.586 3.848 14.433C3.848 20.279 8.586 25.017 14.433 25.017Z"></path>
                                 </svg>
@@ -32,7 +32,6 @@ export default async function decorate(block) {
 							<label for="PhysicianSearch_HDR0_SpecialtyIDs" id="LabelService">${config?.filterspecialtylabel || 'Search by Specialty'}</label>
 							<div class="input-text">
 								<select id="PhysicianSearch_HDR0_SpecialtyIDs" autocomplete="off" class="ui-cms-select ui-cms-input" name="PhysicianSearch$HDR0$SpecialtyIDs" data-history="SpecialtyIDs" data-history-qs="Specialty" data-search="true">
-									<option class="hide" style="display:none;" value="287068" id="FindAPhysician_1" data-page=""></option>
 									<option value="" selected="">All Specialties</option>
 									<option value="Nephrology">Nephrology</option>
 									<option value="Pediatric Nephrology">Pediatric Nephrology</option>
@@ -71,6 +70,20 @@ export default async function decorate(block) {
 			</div>
 		</div>
     `;
+
+	const clearLink = document.querySelector('.clear-filters');
+	clearLink.addEventListener('click', (e) => {
+		e.preventDefault();
+		const allSelects = document.querySelectorAll('.search-form select');
+		allSelects.forEach(select => {
+			select.value = '';
+		});
+		const allInputs = document.querySelectorAll('.search-form input[type="text"]');
+		allInputs.forEach(input => {
+			input.value = '';
+		});
+		alert('filters cleared')
+	});
 
     const searchResults = document.createElement('div');
     searchResults.className = 'doctor-results main system-padding';
