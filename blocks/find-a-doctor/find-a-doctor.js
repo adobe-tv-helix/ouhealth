@@ -171,9 +171,9 @@ async function fetchAllDoctors() {
 		.then((contentfragments) => {
 			let data = '';
 			if (contentfragments.data) {
-				data = contentfragments.data.items;
+				data = contentfragments.data;
 			}
-			console.log('returning contentfragments data', data);
+			console.log('returning contentfragments data 21', data);
 			return data;
     });
 		// .then((response) => {
