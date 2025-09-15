@@ -90,7 +90,7 @@ console.log('block config', config);
 
 	// clear all filters listener
 	const clearLink = document.querySelector('.clear-filters');
-	clearLink.addEventListener('click', (e) => {
+	clearLink.addEventListener('click', async (e) => {
 		e.preventDefault();
 		const allSelects = document.querySelectorAll('.search-form select');
 		allSelects.forEach(select => {
@@ -107,7 +107,7 @@ console.log('block config', config);
 	
 	// gender select listener
 	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
-	genderSelect.addEventListener('change', (e) => {
+	genderSelect.addEventListener('change', async (e) => {
 		e.preventDefault();
 		const selectedGender = e.target.value;
 		alert('selectedGender 2 ' + selectedGender);
