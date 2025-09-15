@@ -173,8 +173,8 @@ async function fetchAllDoctors() {
 			if (contentfragments.data && contentfragments.data.doctorList) {
 				data = contentfragments.data.doctorList;
 			}
-			console.log('returning contentfragments data 243', data);
-			return data;
+			console.log('returning contentfragments data 238209', data.items);
+			return data.items;
     });
 		// .then((response) => {
 		// 	let data = response.json();
