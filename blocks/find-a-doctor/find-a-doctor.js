@@ -92,8 +92,8 @@ alert('filters cleared');
 	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
 	genderSelect.addEventListener('change', (e) => {
 		e.preventDefault();
-		const selectedGender = this.value;
-		alert('selectedGender 2', selectedGender);
+		const selectedGender = e.target.value;
+		alert('selectedGender 2' + selectedGender);
 		
 	});
 
