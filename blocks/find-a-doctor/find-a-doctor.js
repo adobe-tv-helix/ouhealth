@@ -78,7 +78,7 @@ console.log('block config', config);
     //         <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
     //     </header>
     // `;
-	const searchResults = renderSearchResultsPanel(config);
+	const searchResults = await renderSearchResultsPanel(config);
 
 	const doctorQueryResults = await fetchAllDoctors();
     renderDoctorResults(searchResults, doctorQueryResults);
@@ -98,7 +98,7 @@ console.log('block config', config);
 			input.value = '';
 		});
 	alert('filters cleared');
-		const searchResultsPnl = renderSearchResultsPanel(config);
+		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResults(searchResultsPnl, doctorQueryResults);
 		block.appendChild(searchResultsPnl);
@@ -110,7 +110,7 @@ console.log('block config', config);
 		e.preventDefault();
 		const selectedGender = e.target.value;
 alert('selectedGender 3 ' + selectedGender);
-		const searchResultsPnl = renderSearchResultsPanel(config);
+		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
 		block.appendChild(searchResultsPnl);
