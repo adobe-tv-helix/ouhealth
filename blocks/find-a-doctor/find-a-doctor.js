@@ -97,7 +97,7 @@ console.log('block config', config);
 		allInputs.forEach(input => {
 			input.value = '';
 		});
-	alert('filters cleared');
+alert('filters cleared');
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResults(searchResultsPnl, doctorQueryResults);
@@ -109,7 +109,7 @@ console.log('block config', config);
 	genderSelect.addEventListener('change', async (e) => {
 		e.preventDefault();
 		const selectedGender = e.target.value;
-alert('selectedGender 3 ' + selectedGender);
+
 		searchResults.innerHTML = '';
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
@@ -217,17 +217,19 @@ async function fetchAllDoctors() {
 		}`;
 	const options = { credentials: 'include' };
 
-	const cfList = await fetch(url, options)
-		.then((response) => response.json())
-		.then((contentfragments) => {
-			let data = '';
-			if (contentfragments.data && contentfragments.data.doctorList) {
-				data = contentfragments.data.doctorList;
-			}
-console.log('returning contentfragments data 238209', data.items);
-			return data.items;
-    });
+// 	const cfList = await fetch(url, options)
+// 		.then((response) => response.json())
+// 		.then((contentfragments) => {
+// 			let data = '';
+// 			if (contentfragments.data && contentfragments.data.doctorList) {
+// 				data = contentfragments.data.doctorList;
+// 			}
+// console.log('returning contentfragments data 238209', data.items);
+// 			return data.items;
+//     });
 
+	const cfList = await executeQuery(url);
+	
 	return cfList;
 }
 
