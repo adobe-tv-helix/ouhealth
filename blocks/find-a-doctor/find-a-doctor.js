@@ -131,6 +131,7 @@ async function renderSearchResultsPanel(config) {
 }
 
 async function renderDoctorResults(searchResults, allDoctors) {
+	searchResults.innerHTML = '';
 	const doctorResultsList = document.createElement('ul');
 	doctorResultsList.innerHTML = '';
     doctorResultsList.className = 'system-cards items-25';
