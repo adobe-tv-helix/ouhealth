@@ -114,6 +114,7 @@ alert('filters cleared');
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
+		block.removeChild(searchResults);
 		block.appendChild(searchResultsPnl);
 	});
 }
@@ -226,10 +227,10 @@ async function fetchAllDoctors() {
 // 			}
 // console.log('returning contentfragments data 238209', data.items);
 // 			return data.items;
-//     });
+//     }); 
 
 	const cfList = await executeQuery(url);
-	
+
 	return cfList;
 }
 
