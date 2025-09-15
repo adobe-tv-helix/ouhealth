@@ -114,7 +114,10 @@ alert('filters cleared');
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
-		alert('before appending searchResultsPnl');
+		if(searchResults) {
+			block.append(searchResults);
+			block.removeChild(searchResults);
+		}
 		block.appendChild(searchResultsPnl);
 	});
 }
