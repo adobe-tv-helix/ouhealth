@@ -8,7 +8,7 @@ import { isAuthorEnvironment, moveInstrumentation } from '../../scripts/scripts.
  */
 export default async function decorate(block) {
 	const config = readBlockConfig(block);
-	console.log('block config', config);
+console.log('block config', config);
 
     block.innerHTML = `
         <div class="filter-header">
@@ -32,7 +32,7 @@ export default async function decorate(block) {
 							<label for="PhysicianSearch_HDR0_SpecialtyIDs" id="LabelService">${config?.filterspecialtylabel || 'Search by Specialty'}</label>
 							<div class="input-text">
 								<select id="PhysicianSearch_HDR0_SpecialtyIDs" autocomplete="off" class="ui-cms-select ui-cms-input" name="PhysicianSearch$HDR0$SpecialtyIDs" data-history="SpecialtyIDs" data-history-qs="Specialty" data-search="true">
-									<option value="" selected="">All Specialties</option>
+									<option value="" selected="">${config?.filterspecialtyplaceholder || 'All Specialties'}</option>
 									<option value="Nephrology">Nephrology</option>
 									<option value="Pediatric Nephrology">Pediatric Nephrology</option>
 									<option value="Pediatric Psychiatry">Pediatric Psychiatry</option>
@@ -48,7 +48,7 @@ export default async function decorate(block) {
 							<label for="PhysicianSearch_HDR0_Gender" id="LabelGender">${config?.filtergenderlabel || 'Search by Gender'}</label>
 							<div class="input-text">
 								<select id="PhysicianSearch_HDR0_Gender" autocomplete="off" class="ui-cms-select ui-cms-input" name="PhysicianSearch$HDR0$Gender" data-history="Gender" data-search="true">
-									<option value="" selected="">Any</option>
+									<option value="" selected="">${config?.filtergenderplaceholder || 'Any'}</option>
 									<option value="Female">Female</option>
 									<option value="Male">Male</option>
 								</select>
