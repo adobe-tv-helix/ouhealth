@@ -71,6 +71,7 @@ console.log('block config', config);
 		</div>
     `;
 
+	// clear all filters listener
 	const clearLink = document.querySelector('.clear-filters');
 	clearLink.addEventListener('click', (e) => {
 		e.preventDefault();
@@ -82,7 +83,18 @@ console.log('block config', config);
 		allInputs.forEach(input => {
 			input.value = '';
 		});
-		alert('filters cleared')
+alert('filters cleared');
+		renderResultsContainer(searchResults);
+    	renderDoctorResults(doctorResultsList, fetchAllDoctors());
+	});
+
+	// gender select listener
+	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
+	genderSelect.addEventListener('change', (e) => {
+		e.preventDefault();
+		const selectedGender = e.target.value;
+		alert('selectedGender', selectedGender);
+		
 	});
 
     const searchResults = document.createElement('div');
@@ -93,17 +105,23 @@ console.log('block config', config);
         </header>
     `;
 
-    const doctorResultsList = document.createElement('ul');
-    doctorResultsList.className = 'system-cards items-25';
-    searchResults.appendChild(doctorResultsList);
+    // const doctorResultsList = document.createElement('ul');
+    // doctorResultsList.className = 'system-cards items-25';
+    // searchResults.appendChild(doctorResultsList);
 
-    renderAllDoctorResults(doctorResultsList);
+	renderResultsContainer(searchResults);
+    renderDoctorResults(doctorResultsList, fetchAllDoctors());
 
     block.appendChild(searchResults);
 }
 
-async function renderAllDoctorResults(doctorResultsList) {
-	const allDoctors = await fetchAllDoctors();
+async function renderResultsContainer(searchResults) {
+	const doctorResultsList = document.createElement('ul');
+    doctorResultsList.className = 'system-cards items-25';
+    searchResults.appendChild(doctorResultsList);
+}
+
+async function renderDoctorResults(doctorResultsList, allDoctors) {
 	allDoctors.forEach(doctor => {
 		const indDoctor = document.createElement('li');
 		indDoctor.className = 'half item-1';
@@ -191,6 +209,35 @@ async function fetchAllDoctors() {
 				data = contentfragments.data.doctorList;
 			}
 console.log('returning contentfragments data 238209', data.items);
+			return data.items;
+    });
+
+	return cfList;
+}
+
+async function fetchDoctorsBySelectedGender(selectedGender) {
+	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
+	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByGender';
+
+	const isAuthor = isAuthorEnvironment();
+	const url = window?.location?.origin?.includes('author')
+		? `${aemAuthorUrl}${persistedQuery};genderValue=${selectedGender};ts=${
+			Math.random() * 1000
+		}`
+		: `${aemPublishUrl}${persistedQuery};genderValue=${selectedGender};ts=${
+			Math.random() * 1000
+		}`;
+	const options = { credentials: 'include' };
+
+	const cfList = await fetch(url, options)
+		.then((response) => response.json())
+		.then((contentfragments) => {
+			let data = '';
+			if (contentfragments.data && contentfragments.data.doctorList) {
+				data = contentfragments.data.doctorList;
+			}
+
 			return data.items;
     });
 
