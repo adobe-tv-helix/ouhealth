@@ -110,7 +110,8 @@ alert('filters cleared');
     // searchResults.appendChild(doctorResultsList);
 
 	const doctorResultsList = renderResultsContainer(searchResults);
-    renderDoctorResults(doctorResultsList, fetchAllDoctors());
+	const doctorQueryResults = await fetchAllDoctors();
+    renderDoctorResults(doctorResultsList, doctorQueryResults);
 
     block.appendChild(searchResults);
 }
@@ -230,6 +231,25 @@ async function fetchDoctorsBySelectedGender(selectedGender) {
 		: `${aemPublishUrl}${persistedQuery};genderValue=${selectedGender};ts=${
 			Math.random() * 1000
 		}`;
+	// const options = { credentials: 'include' };
+
+	// const cfList = await fetch(url, options)
+	// 	.then((response) => response.json())
+	// 	.then((contentfragments) => {
+	// 		let data = '';
+	// 		if (contentfragments.data && contentfragments.data.doctorList) {
+	// 			data = contentfragments.data.doctorList;
+	// 		}
+
+	// 		return data.items;
+    // });
+
+	const cfList = await executeQuery(url);
+
+	return cfList;
+}
+
+async function executeQuery(url) {
 	const options = { credentials: 'include' };
 
 	const cfList = await fetch(url, options)
