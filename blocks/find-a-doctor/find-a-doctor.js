@@ -169,7 +169,7 @@ async function fetchAllDoctors() {
 	const cfList = await fetch(url, options)
 		.then((response) => {
 			let data = response.json();
-			return data.data.items;
+			return data.items;
 		});
 
 	return cfList;
