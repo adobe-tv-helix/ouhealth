@@ -86,7 +86,7 @@ export default async function decorate(block) {
 }
 
 async function renderAllDoctorResults(doctorResultsList) {
-	const allDoctors = await fetchAllDoctors;
+	const allDoctors = await fetchAllDoctors();
 	allDoctors.forEach(doctor => {
 		const indDoctor = document.createElement('li');
 		indDoctor.className = 'half item-1';
