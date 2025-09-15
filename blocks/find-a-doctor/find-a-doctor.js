@@ -71,17 +71,14 @@ console.log('block config', config);
 		</div>
     `;
 
-    const searchResults = document.createElement('div');
-    searchResults.className = 'doctor-results main system-padding';
-    searchResults.innerHTML = `
-        <header class="mar-b-3 flex-between-middle" role="presentation">
-            <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
-        </header>
-    `;
-
-    // const doctorResultsList = document.createElement('ul');
-    // doctorResultsList.className = 'system-cards items-25';
-    // searchResults.appendChild(doctorResultsList);
+    // const searchResults = document.createElement('div');
+    // searchResults.className = 'doctor-results main system-padding';
+    // searchResults.innerHTML = `
+    //     <header class="mar-b-3 flex-between-middle" role="presentation">
+    //         <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
+    //     </header>
+    // `;
+	const searchResults = renderSearchResultsPanel();
 
 	const doctorQueryResults = await fetchAllDoctors();
     renderDoctorResults(searchResults, doctorQueryResults);
@@ -101,6 +98,7 @@ console.log('block config', config);
 			input.value = '';
 		});
 	alert('filters cleared');
+		const searchResultsPnl = renderSearchResultsPanel();
 		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResults(searchResults, doctorQueryResults);
 		block.appendChild(searchResults);
@@ -112,10 +110,24 @@ console.log('block config', config);
 		e.preventDefault();
 		const selectedGender = e.target.value;
 alert('selectedGender 3 ' + selectedGender);
+		const searchResultsPnl = renderSearchResultsPanel();
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResults, doctorQueryByGenderResults);
 		block.appendChild(searchResults);
 	});
+}
+
+async function renderSearchResultsPanel() {
+	const searchResults = document.createElement('div');
+    searchResults.className = 'doctor-results main system-padding';
+	searchResults.innerHTML = '';
+    searchResults.innerHTML = `
+        <header class="mar-b-3 flex-between-middle" role="presentation">
+            <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
+        </header>
+    `;
+
+	return searchResults;
 }
 
 async function renderDoctorResults(searchResults, allDoctors) {
