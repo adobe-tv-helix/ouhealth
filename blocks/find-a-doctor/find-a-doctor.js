@@ -115,6 +115,7 @@ alert('filters cleared');
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
 		block.removeChild(searchResults);
+		alert('before appending searchResultsPnl');
 		block.appendChild(searchResultsPnl);
 	});
 }
