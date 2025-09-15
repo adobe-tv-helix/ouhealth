@@ -71,32 +71,6 @@ console.log('block config', config);
 		</div>
     `;
 
-	// clear all filters listener
-	const clearLink = document.querySelector('.clear-filters');
-	clearLink.addEventListener('click', (e) => {
-		e.preventDefault();
-		const allSelects = document.querySelectorAll('.search-form select');
-		allSelects.forEach(select => {
-			select.value = '';
-		});
-		const allInputs = document.querySelectorAll('.search-form input[type="text"]');
-		allInputs.forEach(input => {
-			input.value = '';
-		});
-alert('filters cleared');
-		const doctorResultsList = renderResultsContainer(searchResults);
-    	renderDoctorResults(doctorResultsList, fetchAllDoctors());
-	});
-
-	// gender select listener
-	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
-	genderSelect.addEventListener('change', (e) => {
-		e.preventDefault();
-		const selectedGender = e.target.value;
-		alert('selectedGender 2' + selectedGender);
-		
-	});
-
     const searchResults = document.createElement('div');
     searchResults.className = 'doctor-results main system-padding';
     searchResults.innerHTML = `
@@ -109,11 +83,36 @@ alert('filters cleared');
     // doctorResultsList.className = 'system-cards items-25';
     // searchResults.appendChild(doctorResultsList);
 
-	const doctorResultsList = renderResultsContainer(searchResults);
 	const doctorQueryResults = await fetchAllDoctors();
-    renderDoctorResults(doctorResultsList, doctorQueryResults);
+    renderDoctorResults(searchResults, doctorQueryResults);
 
     block.appendChild(searchResults);
+
+	// clear all filters listener
+	const clearLink = document.querySelector('.clear-filters');
+	clearLink.addEventListener('click', (e) => {
+		e.preventDefault();
+		const allSelects = document.querySelectorAll('.search-form select');
+		allSelects.forEach(select => {
+			select.value = '';
+		});
+		const allInputs = document.querySelectorAll('.search-form input[type="text"]');
+		allInputs.forEach(input => {
+			input.value = '';
+		});
+	alert('filters cleared');
+		const doctorQueryResults = fetchAllDoctors();
+		renderDoctorResults(searchResults, doctorQueryResults);
+	});
+	
+	// gender select listener
+	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
+	genderSelect.addEventListener('change', (e) => {
+		e.preventDefault();
+		const selectedGender = e.target.value;
+		alert('selectedGender 2' + selectedGender);
+			
+	});
 }
 
 async function renderResultsContainer(searchResults) {
@@ -124,7 +123,12 @@ async function renderResultsContainer(searchResults) {
 	return doctorResultsList;
 }
 
-async function renderDoctorResults(doctorResultsList, allDoctors) {
+async function renderDoctorResults(searchResults, allDoctors) {
+	const doctorResultsList = document.createElement('ul');
+	doctorResultsList.innerHTML = '';
+    doctorResultsList.className = 'system-cards items-25';
+    searchResults.appendChild(doctorResultsList);
+
 	allDoctors.forEach(doctor => {
 		const indDoctor = document.createElement('li');
 		indDoctor.className = 'half item-1';
