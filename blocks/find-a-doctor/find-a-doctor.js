@@ -263,7 +263,7 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyEncoded};ts=${
 			Math.random() * 1000
 		}`
-		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialty};ts=${
+		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyEncoded};ts=${
 			Math.random() * 1000
 		}`;
 
