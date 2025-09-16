@@ -280,7 +280,7 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	const options = {
 	method: 'POST',
 	credentials: 'include',
-	headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+	headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'main--ouhealth--adobe-tv-helix*' },
 	body: JSON.stringify({ variables }) // Correct wrapping!
 	};
 	const response = await fetch(url, options);
