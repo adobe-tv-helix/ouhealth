@@ -373,6 +373,14 @@ section picture img {
     widtH: 88px !important;
 }
 
+.npr-scores-cont .ds-summary .ds-stars img {
+    display: block;
+    opacity: 1;
+    transition: opacity .3s ease 0s;
+    max-width: 100%;
+    border: none;
+}
+
 .npr-scores-cont .ds-summary .ds-xofy {
     font-weight: 700;
 }
