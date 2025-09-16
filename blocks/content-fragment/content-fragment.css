@@ -73,8 +73,14 @@ icon svg, svg[data-use] {
     padding-right: var(--main-padding);
     position: relative;
 }
-
+/*
 main section:not(.no-padding), .section-padding {
+    padding-top: var(--section-vertical-padding);
+    padding-bottom: var(--section-vertical-padding);
+    position: relative;
+}
+*/
+main .two-col-container-sub-zone-reversed {
     padding-top: var(--section-vertical-padding);
     padding-bottom: var(--section-vertical-padding);
     position: relative;
