@@ -3,7 +3,8 @@
     "/content/ouhealth/:/",
     "/content/ouhealth/configuration:/.helix/config.json",
     "/content/ouhealth/metadata:/metadata.json",
-    "/content/ouhealth/redirects:/redirects.json"
+    "/content/ouhealth/redirects:/redirects.json",
+    "/content/ouhealth/headers:/.helix/headers.json"
   ],
   "includes": [
     "/content/ouhealth/",
