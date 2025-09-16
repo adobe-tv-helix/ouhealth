@@ -278,9 +278,9 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	ts: Math.random() * 1000
 	};
 	const options = {
-	method: 'POST',
+	method: 'GET',
 	credentials: 'include',
-	headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'main--ouhealth--adobe-tv-helix*' },
+	headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
 	body: JSON.stringify({ variables }) // Correct wrapping!
 	};
 	const response = await fetch(url, options);
