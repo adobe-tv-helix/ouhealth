@@ -63,7 +63,7 @@ console.log('block config', config);
 					<a href="javascript:void(0);" class="link-style-2 filter-btn more-less" data-type="open" role="button" tabindex="0" aria-expanded="false">
 						<span class="filter-show" data-role="btn"><img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Show Advanced Filters"> Show Advanced Filters</span></a>
 					<a aria-label="click to clear existing filters" href="javascript:void('ClearAll');" class="link-style-2 clear-filters">
-                        <img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Clear Filters">&nbsp;
+                        <img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Clear Filters">
                         Clear Filters
                     </a>
 				</div>
