@@ -275,20 +275,22 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	const variables = {
 		nameValue: selectedName
 	}
-	const cfList = await fetch(url, {
-		body: JSON.stringify({
-			url, variables
-		})
-		.then(response => response.json())
-		.then((contentfragments) => {
-			let data = '';
-			if (contentfragments.data && contentfragments.data.doctorList) {
-				data = contentfragments.data.doctorList;
-			}
+	const response = await fetch(url, {
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify(variables)});
+	const result = await response.json();
+	const cfList = result.data.doctorList.items;
 
-			return data.items;
-		})
-	});
+		// .then(response => response.json())
+		// .then((contentfragments) => {
+		// 	let data = '';
+		// 	if (contentfragments.data && contentfragments.data.doctorList) {
+		// 		data = contentfragments.data.doctorList;
+		// 	}
+
+		// 	return data.items;
+		// })
+	// });
 
 	return cfList;
 }
