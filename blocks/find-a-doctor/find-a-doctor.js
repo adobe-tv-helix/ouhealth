@@ -261,44 +261,21 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
 	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByNameFilter';
-	const selectedNameEncoded = encodeURIComponent(selectedName);
 
-	// const url = window?.location?.origin?.includes('author')
-	// 	? `${aemAuthorUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
-	// 		Math.random() * 1000
-	// 	}`
-	// 	: `${aemPublishUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
-	// 		Math.random() * 1000
-	// 	}`;
+	// NOT working even though it looks correct in developer console
+	// const selectedNameEncoded = encodeURIComponent(selectedName);
+	// changing to CONTAINS query just for demo
+	const firstWordName = selectedName.trim().split(/\s+/)[0];
 
-	// const cfList = await executeQuery(url);
-	const url = `${aemPublishUrl}${persistedQuery}`;
-	const variables = {
-	nameValue: decodeURIComponent(selectedName),
-	ts: Math.random() * 1000
-	};
-	const params = new URLSearchParams(variables).toString();
-	const urlWithParams = `${aemPublishUrl}${persistedQuery}?${params}`;
-	const options = {
-	method: 'GET',
-	credentials: 'include',
-	headers: { 'Content-Type': 'application/json' }
-	// body: JSON.stringify({ variables }) // Correct wrapping!
-	};
-	const response = await fetch(urlWithParams, options);
-	const result = await response.json();
-	const cfList = result.data.doctorList.items;
+	const url = window?.location?.origin?.includes('author')
+		? `${aemAuthorUrl}${persistedQuery};nameValue=${firstWordName};ts=${
+			Math.random() * 1000
+		}`
+		: `${aemPublishUrl}${persistedQuery};nameValue=${firstWordName};ts=${
+			Math.random() * 1000
+		}`;
 
-		// .then(response => response.json())
-		// .then((contentfragments) => {
-		// 	let data = '';
-		// 	if (contentfragments.data && contentfragments.data.doctorList) {
-		// 		data = contentfragments.data.doctorList;
-		// 	}
-
-		// 	return data.items;
-		// })
-	// });
+	const cfList = await executeQuery(url);
 
 	return cfList;
 }
