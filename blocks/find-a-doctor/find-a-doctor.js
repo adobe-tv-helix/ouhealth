@@ -94,7 +94,7 @@ alert('selectedName 83 ' + selectedName);
 	specialtySelect.addEventListener('change', async (e) => {
 		e.preventDefault();
 		const selectedSpecialty = e.target.value;
-alert('selectedSpecialty 97 ' + selectedSpecialty);
+
 		if (selectedSpecialty !== '') {
 			const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
 			allSearchResultsPanels?.forEach(panel => {
@@ -219,7 +219,7 @@ async function renderDoctorResultsPanel(searchResults, allDoctors) {
 									</div>
 								</div>
 								<div class="ds-xofy"><span class="ds-average">${doctor.rating} </span><span class="ds-average-max">out of 5</span></div>
-								<div class="ds-ratings"><span class="ds-ratingcount">(${doctor.numberOfRatings})</span> Ratings)</div>				
+								<div class="ds-ratings"><span class="ds-ratingcount">(${doctor.numberOfRatings}</span> Ratings)</div>				
 							</div>
 						</div>
 					</div>
