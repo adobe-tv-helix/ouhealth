@@ -174,9 +174,10 @@ async function renderDoctorResultsPanel(searchResults, allDoctors) {
 	allDoctors.forEach(doctor => {
 		const indDoctor = document.createElement('li');
 		indDoctor.className = 'half item-1';
+		const strippedPagePath = doctor.doctorPage?._path.replace(/^\/content\/ouhealth\/index?/, '');
 
 		indDoctor.innerHTML = `
-			<a href="${doctor.doctorPage?._path}" class="flex-top-between-block-500">
+			<a href="${strippedPagePath}" class="flex-top-between-block-500">
 				<figure role="presentation">
 					<picture>
 						<img loading="lazy" alt="" src="${doctor.imagePath?._path}">			
