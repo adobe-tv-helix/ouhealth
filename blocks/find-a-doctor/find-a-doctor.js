@@ -260,10 +260,10 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 
 	const isAuthor = isAuthorEnvironment();
 	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyDecoded};ts=${
+		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${decodeURIComponent(selectedSpecialty)};ts=${
 			Math.random() * 1000
 		}`
-		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialty};ts=${
+		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${decodeURIComponent(selectedSpecialty)};ts=${
 			Math.random() * 1000
 		}`;
 
