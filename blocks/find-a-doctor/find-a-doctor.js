@@ -267,7 +267,7 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 			Math.random() * 1000
 		}`;
 
-	const cfList = await executeQuery(url);
+	const cfList = await executeQuery(JSON.stringify(url));
 
 	return cfList;
 }
