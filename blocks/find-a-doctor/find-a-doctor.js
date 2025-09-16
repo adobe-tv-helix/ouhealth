@@ -256,14 +256,17 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
 	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorBySpecialtyFilter';
-	const selectedSpecialtyEncoded = encodeURIComponent(selectedSpecialty);
+	// NOT working even though it looks correct in developer console
+	// const selectedSpecialtyEncoded = encodeURIComponent(selectedSpecialty);
+	// changing to CONTAINS query just for demo
+	const firstWordSpecialty = selectedSpecialty.trim().split(/\s+/)[0];
 
 	const isAuthor = isAuthorEnvironment();
 	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyEncoded};ts=${
+		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
 			Math.random() * 1000
 		}`
-		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyEncoded};ts=${
+		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
 			Math.random() * 1000
 		}`;
 
