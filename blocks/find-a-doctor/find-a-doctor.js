@@ -256,10 +256,11 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
 	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorBySpecialtyFilter';
+	const selectedSpecialtyDecoded = selectedSpecialty.replace(/%20/g, ' ');
 
 	const isAuthor = isAuthorEnvironment();
 	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialty};ts=${
+		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyDecoded};ts=${
 			Math.random() * 1000
 		}`
 		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialty};ts=${
