@@ -256,18 +256,18 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
 	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorBySpecialtyFilter';
-	const selectedSpecialtyDecoded = selectedSpecialty.replace(/%20/g, ' ');
+	const selectedSpecialtyEncoded = encodeURIComponent(selectedSpecialty);
 
 	const isAuthor = isAuthorEnvironment();
 	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${decodeURIComponent(selectedSpecialty)};ts=${
+		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialtyEncoded};ts=${
 			Math.random() * 1000
 		}`
-		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${decodeURIComponent(selectedSpecialty)};ts=${
+		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${selectedSpecialty};ts=${
 			Math.random() * 1000
 		}`;
 
-	const cfList = await executeQuery(JSON.stringify(url));
+	const cfList = await executeQuery(url);
 
 	return cfList;
 }
