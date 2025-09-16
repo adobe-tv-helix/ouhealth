@@ -262,15 +262,33 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByNameFilter';
 	const selectedNameEncoded = encodeURIComponent(selectedName);
 
-	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
-			Math.random() * 1000
-		}`
-		: `${aemPublishUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
-			Math.random() * 1000
-		}`;
+	// const url = window?.location?.origin?.includes('author')
+	// 	? `${aemAuthorUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
+	// 		Math.random() * 1000
+	// 	}`
+	// 	: `${aemPublishUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
+	// 		Math.random() * 1000
+	// 	}`;
 
-	const cfList = await executeQuery(url);
+	// const cfList = await executeQuery(url);
+	const url = `${aemPublishUrl}${persistedQuery}`;
+	const variables = {
+		nameValue: selectedName
+	}
+	const cfList = await fetch(url, {
+		body: JSON.stringify({
+			url, variables
+		})
+		.then(response => response.json())
+		.then((contentfragments) => {
+			let data = '';
+			if (contentfragments.data && contentfragments.data.doctorList) {
+				data = contentfragments.data.doctorList;
+			}
+
+			return data.items;
+		})
+	});
 
 	return cfList;
 }
