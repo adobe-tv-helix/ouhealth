@@ -110,8 +110,10 @@ alert('filters cleared');
 		e.preventDefault();
 		const selectedGender = e.target.value;
 
-		searchResults.innerHTML = '';
-		searchResults.innerText = '';
+		const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
+		allSearchResultsPanels.forEach(panel => {
+			block.removeChild(panel);
+		});
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
