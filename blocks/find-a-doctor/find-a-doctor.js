@@ -274,7 +274,7 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	// const cfList = await executeQuery(url);
 	const url = `${aemPublishUrl}${persistedQuery}`;
 	const variables = {
-	nameValue: selectedNameEncoded,
+	nameValue: 'tony abdo',
 	ts: Math.random() * 1000
 	};
 	const params = new URLSearchParams(variables).toString();
