@@ -80,7 +80,7 @@ console.log('block config', config);
 	nameInput.addEventListener('blur', async (e) => {
 		e.preventDefault();
 		const selectedName = e.target.value;
-alert('selectedName 83 ' + selectedName);
+
 		if (selectedName !== '') {
 			const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
 			allSearchResultsPanels?.forEach(panel => {
