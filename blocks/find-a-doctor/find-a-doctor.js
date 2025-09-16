@@ -272,11 +272,12 @@ async function fetchDoctorsBySelectedName(selectedName) {
 
 	// const cfList = await executeQuery(url);
 	const url = `${aemPublishUrl}${persistedQuery}`;
+	const options = { credentials: 'include' };
 	const variables = {
 		nameValue: selectedName,
 		ts: Math.random() * 1000
 	}
-	const response = await fetch(url, {
+	const response = await fetch(url, options,{
 		method: 'POST',
 		headers: {'Content-Type': 'application/json'},
 		body: JSON.stringify(variables)});
