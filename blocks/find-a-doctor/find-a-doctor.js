@@ -111,13 +111,10 @@ alert('filters cleared');
 		const selectedGender = e.target.value;
 
 		searchResults.innerHTML = '';
+		searchResults.innerText = '';
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
-		if(searchResults) {
-			block.append(searchResults);
-			block.removeChild(searchResults);
-		}
 		block.appendChild(searchResultsPnl);
 	});
 }
@@ -203,7 +200,6 @@ async function renderDoctorResults(searchResults, allDoctors) {
 		doctorResultsList.appendChild(indDoctor);
 	});
 
-	searchResults.innerHTML = '';
 	searchResults.appendChild(doctorResultsList);
 }
 
