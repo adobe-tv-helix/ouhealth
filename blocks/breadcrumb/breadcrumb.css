@@ -26,7 +26,7 @@
     text-decoration: none;
     transition: color var(--transit-1);
 }
-/*
+
 .bread-container > a, .bread-container .selected {
     display: block;
 }
@@ -60,7 +60,7 @@ icon svg, svg[data-use] {
 .bread-container svg {
     display: block;
 }
-*/
+
 .link-style-disabled {
     position: relative;
     font-size: .889rem;
