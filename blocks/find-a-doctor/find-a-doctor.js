@@ -280,6 +280,7 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	const options = {
 	method: 'POST',
 	credentials: 'include',
+	mode: 'cors',
 	headers: { 'Content-Type': 'application/json' },
 	body: JSON.stringify({ variables }) // Correct wrapping!
 	};
