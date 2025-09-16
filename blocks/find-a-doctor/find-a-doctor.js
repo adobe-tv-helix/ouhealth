@@ -94,7 +94,7 @@ alert('selectedName 83 ' + selectedName);
 	specialtySelect.addEventListener('change', async (e) => {
 		e.preventDefault();
 		const selectedSpecialty = e.target.value;
-
+alert('selectedSpecialty 97 ' + selectedSpecialty);
 		if (selectedSpecialty !== '') {
 			const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
 			allSearchResultsPanels?.forEach(panel => {
