@@ -277,13 +277,15 @@ async function fetchDoctorsBySelectedName(selectedName) {
 	nameValue: selectedName,
 	ts: Math.random() * 1000
 	};
+	const params = new URLSearchParams(variables).toString();
+	const urlWithParams = `${aemPublishUrl}${persistedQuery}?${params}`;
 	const options = {
 	method: 'GET',
 	credentials: 'include',
-	headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-	body: JSON.stringify({ variables }) // Correct wrapping!
+	headers: { 'Content-Type': 'application/json' }
+	// body: JSON.stringify({ variables }) // Correct wrapping!
 	};
-	const response = await fetch(url, options);
+	const response = await fetch(urlWithParams, options);
 	const result = await response.json();
 	const cfList = result.data.doctorList.items;
 
