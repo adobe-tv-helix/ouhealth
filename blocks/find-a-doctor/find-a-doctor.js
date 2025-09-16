@@ -23,7 +23,7 @@ console.log('block config', config);
 							<label for="PhysicianSearch_HDR0_PhysicianName" id="LabelName">${config?.filternamelabel || 'Search by Name'}</label>
 							<div class="input-text">
 								<input id="PhysicianSearch_HDR0_PhysicianName" autocomplete="off" type="text" placeholder="${config?.filterdoctornameplaceholder || 'Doctor Name'}" class="ui-cms-input-custom" name="PhysicianSearch$HDR0$PhysicianName" value="" data-history="PhysicianName" data-search="true">
-								<svg viewBox="0 0 36 36" data-use="/cms/svg/site/icon_search.36.svg" role="presentation" aria-hidden="true">				
+								<svg viewBox="0 0 36 36" data-use="https://www.ouhealth.com/cms/svg/site/icon_search.36.svg" role="presentation" aria-hidden="true">				
 	                            <path d="M25.908 23.187L36 33.278L33.278 36L23.187 25.908C20.758 27.763 17.725 28.866 14.433 28.866C6.462 28.866 0 22.404 0 14.433C0 6.462 6.462 0 14.433 0C22.404 0 28.866 6.462 28.866 14.433C28.866 17.725 27.763 20.758 25.908 23.187L25.908 23.187ZM14.433 25.017C20.279 25.017 25.017 20.279 25.017 14.433C25.017 8.586 20.279 3.848 14.433 3.848C8.586 3.848 3.848 8.586 3.848 14.433C3.848 20.279 8.586 25.017 14.433 25.017Z"></path>
                                 </svg>
 							</div>
@@ -39,7 +39,7 @@ console.log('block config', config);
 									<option value="Psychiatry">Psychiatry</option>
 									<option value="Pulmonary Medicine">Pulmonary Medicine</option>
 								</select>
-								<svg viewBox="0 0 36 36" data-use="/cms/svg/site/icon_caret_down.36.svg" role="presentation" aria-hidden="true" tabindex="-1">
+								<svg viewBox="0 0 36 36" data-use="https://www.ouhealth.com/cms/svg/site/icon_caret_down.36.svg" role="presentation" aria-hidden="true" tabindex="-1">
 	                            <path d="M14.715 25.405c-0.098-0.168 3.245 3.018 3.288 3.047l3.107-3.047l14.89-14.653c0.051-0.03-0.83-0.812-1.715-1.695a14.161 14.161 0 0 0-1.485-1.506L18.005 22.352l-14.799-14.799c0.02 0-0.735 0.701-1.622 1.584s-1.622 1.598-1.581 1.622Z"></path>
                                 </svg>
 							</div>
@@ -52,7 +52,7 @@ console.log('block config', config);
 									<option value="Female">Female</option>
 									<option value="Male">Male</option>
 								</select>
-								<svg viewBox="0 0 36 36" data-use="/cms/svg/site/icon_caret_down.36.svg" role="presentation" aria-hidden="true" tabindex="-1">			
+								<svg viewBox="0 0 36 36" data-use="https://www.ouhealth.com/cms/svg/site/icon_caret_down.36.svg" role="presentation" aria-hidden="true" tabindex="-1">			
 	                            <path d="M14.715 25.405c-0.098-0.168 3.245 3.018 3.288 3.047l3.107-3.047l14.89-14.653c0.051-0.03-0.83-0.812-1.715-1.695a14.161 14.161 0 0 0-1.485-1.506L18.005 22.352l-14.799-14.799c0.02 0-0.735 0.701-1.622 1.584s-1.622 1.598-1.581 1.622Z"></path>
                             </svg>
 							</div>
@@ -61,9 +61,9 @@ console.log('block config', config);
 				</fieldset>
 				<div class="search-btn-con full flex-between-block-500">
 					<a href="javascript:void(0);" class="link-style-2 filter-btn more-less" data-type="open" role="button" tabindex="0" aria-expanded="false">
-						<span class="filter-show" data-role="btn"><img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Show Advanced Filters">Show Advanced Filters</span></a>
+						<span class="filter-show" data-role="btn"><img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Show Advanced Filters"> Show Advanced Filters</span></a>
 					<a aria-label="click to clear existing filters" href="javascript:void('ClearAll');" class="link-style-2 clear-filters">
-                        <img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Clear Filters">
+                        <img src="https://www.ouhealth.com/images/assets/link-arrow-large.png" alt="Clear Filters">&nbsp;
                         Clear Filters
                     </a>
 				</div>
