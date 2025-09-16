@@ -1,11 +1,7 @@
 .breadcrumb.v2.main {
     padding: 1.889rem 2.5% 0;
 }
-/*
-[class*='flex-'][class*='-wrap'] {
-    flex-wrap: wrap;
-}
-*/
+
 [class*='flex-'][class*='-middle'] {
     align-items: center;
 }
