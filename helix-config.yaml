@@ -1,0 +1,6 @@
+cors:
+  - origin: https://main--ouhealth--adobe-tv-helix.aem.page
+    path: /graphql/execute.json/ouhealth/doctorByNameFilter
+    credentials: true
+    headers: Content-Type, Authorization
+    methods: GET, POST, OPTIONS
