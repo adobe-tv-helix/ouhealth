@@ -35,7 +35,6 @@ console.log('block config', config);
 									<option value="" selected="">${config?.filterspecialtyplaceholder || 'All Specialties'}</option>
 									<option value="Nephrology">Nephrology</option>
 									<option value="Pediatric Nephrology">Pediatric Nephrology</option>
-									<option value="Pediatric Psychiatry">Pediatric Psychiatry</option>
 									<option value="Psychiatry">Psychiatry</option>
 									<option value="Pulmonary Medicine">Pulmonary Medicine</option>
 								</select>
@@ -71,19 +70,60 @@ console.log('block config', config);
 		</div>
     `;
 
-    // const searchResults = document.createElement('div');
-    // searchResults.className = 'doctor-results main system-padding';
-    // searchResults.innerHTML = `
-    //     <header class="mar-b-3 flex-between-middle" role="presentation">
-    //         <h2 class="title-style-2">${config?.resultsalldoctorslabel || 'All Doctors'}</h2>
-    //     </header>
-    // `;
 	const searchResults = await renderSearchResultsPanel(config);
-
 	const doctorQueryResults = await fetchAllDoctors();
     renderDoctorResultsPanel(searchResults, doctorQueryResults);
-
     block.appendChild(searchResults);
+
+	// name input listener
+	const nameInput = document.querySelector('.search-form input[name="PhysicianSearch$HDR0$PhysicianName"]');
+	nameInput.addEventListener('blur', async (e) => {
+		e.preventDefault();
+		const selectedName = e.target.value;
+alert('selectedName 83 ' + selectedName);
+		if (selectedName !== '') {
+			const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
+			allSearchResultsPanels?.forEach(panel => {
+				block.removeChild(panel);
+			});
+		}
+	});
+
+	// specialty select listener
+	const specialtySelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$SpecialtyIDs"]');
+	specialtySelect.addEventListener('change', async (e) => {
+		e.preventDefault();
+		const selectedSpecialty = e.target.value;
+
+		if (selectedSpecialty !== '') {
+			const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
+			allSearchResultsPanels?.forEach(panel => {
+				block.removeChild(panel);
+			});
+			const searchResultsPnl = await renderSearchResultsPanel(config);
+			const doctorQueryBySpecialtyResults = await fetchDoctorsBySelectedSpecialty(selectedSpecialty);
+			renderDoctorResultsPanel(searchResultsPnl, doctorQueryBySpecialtyResults);
+			block.appendChild(searchResultsPnl);
+		}
+	});
+
+	// gender select listener
+	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
+	genderSelect.addEventListener('change', async (e) => {
+		e.preventDefault();
+		const selectedGender = e.target.value;
+
+		if (selectedGender !== '') {
+			const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
+			allSearchResultsPanels?.forEach(panel => {
+				block.removeChild(panel);
+			});
+			const searchResultsPnl = await renderSearchResultsPanel(config);
+			const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
+			renderDoctorResultsPanel(searchResultsPnl, doctorQueryByGenderResults);
+			block.appendChild(searchResultsPnl);
+		}
+	});
 
 	// clear all filters listener
 	const clearLink = document.querySelector('.clear-filters');
@@ -97,30 +137,14 @@ console.log('block config', config);
 		allInputs.forEach(input => {
 			input.value = '';
 		});
-
+	
 		const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
-		allSearchResultsPanels.forEach(panel => {
+		allSearchResultsPanels?.forEach(panel => {
 			block.removeChild(panel);
 		});
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryResults = await fetchAllDoctors();
 		renderDoctorResultsPanel(searchResultsPnl, doctorQueryResults);
-		block.appendChild(searchResultsPnl);
-	});
-	
-	// gender select listener
-	const genderSelect = document.querySelector('.search-form select[name="PhysicianSearch$HDR0$Gender"]');
-	genderSelect.addEventListener('change', async (e) => {
-		e.preventDefault();
-		const selectedGender = e.target.value;
-
-		const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
-		allSearchResultsPanels.forEach(panel => {
-			block.removeChild(panel);
-		});
-		const searchResultsPnl = await renderSearchResultsPanel(config);
-		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
-		renderDoctorResultsPanel(searchResultsPnl, doctorQueryByGenderResults);
 		block.appendChild(searchResultsPnl);
 	});
 }
@@ -220,6 +244,25 @@ async function fetchAllDoctors() {
 			Math.random() * 1000
 		}`
 		: `${aemPublishUrl}${persistedQuery};ts=${
+			Math.random() * 1000
+		}`;
+
+	const cfList = await executeQuery(url);
+
+	return cfList;
+}
+
+async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
+	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
+	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const persistedQuery = '/graphql/execute.json/ouhealth/doctorBySpecialtyFilter';
+
+	const isAuthor = isAuthorEnvironment();
+	const url = window?.location?.origin?.includes('author')
+		? `${aemAuthorUrl}${persistedQuery};specialtyValue=${selectedSpecialty};ts=${
+			Math.random() * 1000
+		}`
+		: `${aemPublishUrl}${persistedQuery};specialtyValue=${selectedSpecialty};ts=${
 			Math.random() * 1000
 		}`;
 
