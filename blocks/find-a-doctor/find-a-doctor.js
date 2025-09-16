@@ -86,6 +86,10 @@ alert('selectedName 83 ' + selectedName);
 			allSearchResultsPanels?.forEach(panel => {
 				block.removeChild(panel);
 			});
+			const searchResultsPnl = await renderSearchResultsPanel(config);
+			const doctorQueryByNameResults = await fetchDoctorsBySelectedName(selectedName);
+			renderDoctorResultsPanel(searchResultsPnl, doctorQueryByNameResults);
+			block.appendChild(searchResultsPnl);
 		}
 	});
 
@@ -244,6 +248,25 @@ async function fetchAllDoctors() {
 			Math.random() * 1000
 		}`
 		: `${aemPublishUrl}${persistedQuery};ts=${
+			Math.random() * 1000
+		}`;
+
+	const cfList = await executeQuery(url);
+
+	return cfList;
+}
+
+async function fetchDoctorsBySelectedName(selectedName) {
+	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
+	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByNameFilter';
+	const selectedNameEncoded = encodeURIComponent(selectedName);
+
+	const url = window?.location?.origin?.includes('author')
+		? `${aemAuthorUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
+			Math.random() * 1000
+		}`
+		: `${aemPublishUrl}${persistedQuery};nameValue=${selectedNameEncoded};ts=${
 			Math.random() * 1000
 		}`;
 
