@@ -81,7 +81,7 @@ console.log('block config', config);
 	const searchResults = await renderSearchResultsPanel(config);
 
 	const doctorQueryResults = await fetchAllDoctors();
-    renderDoctorResults(searchResults, doctorQueryResults);
+    renderDoctorResultsPanel(searchResults, doctorQueryResults);
 
     block.appendChild(searchResults);
 
@@ -97,10 +97,14 @@ console.log('block config', config);
 		allInputs.forEach(input => {
 			input.value = '';
 		});
-alert('filters cleared');
+
+		const allSearchResultsPanels = document.querySelectorAll('.doctor-results');
+		allSearchResultsPanels.forEach(panel => {
+			block.removeChild(panel);
+		});
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryResults = await fetchAllDoctors();
-		renderDoctorResults(searchResultsPnl, doctorQueryResults);
+		renderDoctorResultsPanel(searchResultsPnl, doctorQueryResults);
 		block.appendChild(searchResultsPnl);
 	});
 	
@@ -116,7 +120,7 @@ alert('filters cleared');
 		});
 		const searchResultsPnl = await renderSearchResultsPanel(config);
 		const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
-		renderDoctorResults(searchResultsPnl, doctorQueryByGenderResults);
+		renderDoctorResultsPanel(searchResultsPnl, doctorQueryByGenderResults);
 		block.appendChild(searchResultsPnl);
 	});
 }
@@ -134,7 +138,7 @@ async function renderSearchResultsPanel(config) {
 	return searchResults;
 }
 
-async function renderDoctorResults(searchResults, allDoctors) {
+async function renderDoctorResultsPanel(searchResults, allDoctors) {
 	const doctorResultsList = document.createElement('ul');
 	doctorResultsList.innerHTML = '';
     doctorResultsList.className = 'system-cards items-25';
@@ -218,18 +222,6 @@ async function fetchAllDoctors() {
 		: `${aemPublishUrl}${persistedQuery};ts=${
 			Math.random() * 1000
 		}`;
-	const options = { credentials: 'include' };
-
-// 	const cfList = await fetch(url, options)
-// 		.then((response) => response.json())
-// 		.then((contentfragments) => {
-// 			let data = '';
-// 			if (contentfragments.data && contentfragments.data.doctorList) {
-// 				data = contentfragments.data.doctorList;
-// 			}
-// console.log('returning contentfragments data 238209', data.items);
-// 			return data.items;
-//     }); 
 
 	const cfList = await executeQuery(url);
 
