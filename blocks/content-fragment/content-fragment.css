@@ -74,6 +74,12 @@ icon svg, svg[data-use] {
     position: relative;
 }
 
+main section:not(.no-padding), .section-padding {
+    padding-top: var(--section-vertical-padding);
+    padding-bottom: var(--section-vertical-padding);
+    position: relative;
+}
+
 [class*='flex-'] {
     display: flex;
 }
