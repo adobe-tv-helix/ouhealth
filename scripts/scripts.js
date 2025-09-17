@@ -12,6 +12,10 @@ import {
   loadCSS,
 } from './aem.js';
 
+window.GLOBALS = window.GLOBALS || {};
+window.GLOBALS.DEFAULT_AEM_AUTHOR_URL = 'https://author-p53852-e347001.adobeaemcloud.com';
+window.GLOBALS.DEFAULT_AEM_PUBLISH_URL = 'https://publish-p53852-e347001.adobeaemcloud.com';
+
 export function isAuthorEnvironment() {
   return document.querySelector('*[data-aue-resource]') !== null;
 }

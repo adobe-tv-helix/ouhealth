@@ -245,8 +245,8 @@ async function renderDoctorResultsPanel(searchResults, allDoctors) {
 }
 
 async function fetchAllDoctors() {
-	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
-	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const aemAuthorUrl = getMetadata('authorUrl') || window.GLOBALS?.DEFAULT_AEM_AUTHOR_URL;
+  	const aemPublishUrl = getMetadata('publishUrl') || window.GLOBALS?.DEFAULT_AEM_PUBLISH_URL;
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorsAll';
 
 	const isAuthor = isAuthorEnvironment();
@@ -264,8 +264,8 @@ async function fetchAllDoctors() {
 }
 
 async function fetchDoctorsBySelectedName(selectedName) {
-	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
-	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const aemAuthorUrl = getMetadata('authorUrl') || window.GLOBALS?.DEFAULT_AEM_AUTHOR_URL;
+  	const aemPublishUrl = getMetadata('publishUrl') || window.GLOBALS?.DEFAULT_AEM_PUBLISH_URL;
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByNameFilter';
 
 	// NOT working even though it looks correct in developer console
@@ -287,8 +287,8 @@ async function fetchDoctorsBySelectedName(selectedName) {
 }
 
 async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
-	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
-	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const aemAuthorUrl = getMetadata('authorUrl') || window.GLOBALS?.DEFAULT_AEM_AUTHOR_URL;
+  	const aemPublishUrl = getMetadata('publishUrl') || window.GLOBALS?.DEFAULT_AEM_PUBLISH_URL;
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorBySpecialtyFilter';
 	// NOT working even though it looks correct in developer console
 	// const selectedSpecialtyEncoded = encodeURIComponent(selectedSpecialty);
@@ -338,8 +338,8 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 }
 
 async function fetchDoctorsBySelectedGender(selectedGender) {
-	const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
-	const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+	const aemAuthorUrl = getMetadata('authorUrl') || window.GLOBALS?.DEFAULT_AEM_AUTHOR_URL;
+  	const aemPublishUrl = getMetadata('publishUrl') || window.GLOBALS?.DEFAULT_AEM_PUBLISH_URL;
 	const persistedQuery = '/graphql/execute.json/ouhealth/doctorByGenderFilter';
 
 	const isAuthor = isAuthorEnvironment();

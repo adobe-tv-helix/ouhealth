@@ -6,9 +6,8 @@ import { isAuthorEnvironment, moveInstrumentation } from '../../scripts/scripts.
  * @param {Element} block
  */
 export default async function decorate(block) {
-  // Note: Hard-coded for demo purposes
-  const aemAuthorUrl = getMetadata('authorUrl') || 'https://author-p53852-e347001.adobeaemcloud.com';
-  const aemPublishUrl = getMetadata('publishUrl') || 'https://publish-p53852-e347001.adobeaemcloud.com';
+  const aemAuthorUrl = getMetadata('authorUrl') || window.GLOBALS?.DEFAULT_AEM_AUTHOR_URL;
+  const aemPublishUrl = getMetadata('publishUrl') || window.GLOBALS?.DEFAULT_AEM_PUBLISH_URL;
   const persistedQuery = '/graphql/execute.json/ouhealth/doctorByPath';
 
   const contentPath = block.querySelector(':scope div:nth-child(1) > div a')?.textContent?.trim();
