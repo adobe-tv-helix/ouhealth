@@ -292,35 +292,34 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 	// const selectedSpecialtyEncoded = encodeURIComponent(selectedSpecialty);
 	// changing to CONTAINS query just for demo
 	// const firstWordSpecialty = selectedSpecialty.trim().split(/\s+/)[0];
-	const encodePersistedQueryUrl = (baseUrl, persistedQuery, variables) => {
-		// Build the variable string: "variable1=value1;variable2=value2"
-		const variableString = Object.entries(variables)
-			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-			.join(';');
-		// If EITHER the dispatcher, CDN, or legacy endpoint expects full encoding of the segment
-		// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B) and equals ('=' => %3D) as well.
-		// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
-		const encodedSegment = `%3B${variableString.replace(/;/g, '%3B')}`;//.replace(/=/g, '%3D')}`;
-		console.log('encodedSegment', encodedSegment);
-		return `${baseUrl}${persistedQuery}${encodedSegment}`;
-	};
+	// const encodePersistedQueryUrl = (baseUrl, persistedQuery, variables) => {
+	// 	// Build the variable string: "variable1=value1;variable2=value2"
+	// 	const variableString = Object.entries(variables)
+	// 		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+	// 		.join(';');
+	// 	// If EITHER the dispatcher, CDN, or legacy endpoint expects full encoding of the segment
+	// 	// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B) and equals ('=' => %3D) as well.
+	// 	// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
+	// 	const encodedSegment = `%3B${variableString.replace(/;/g, '%3B')}`;//.replace(/=/g, '%3D')}`;
+	// 	console.log('encodedSegment', encodedSegment);
+	// 	return `${baseUrl}${persistedQuery}${encodedSegment}`;
+	// };
 
-	const variables = {
-		primarySpecialtyValue: selectedSpecialty,
-		ts: (Math.random() * 1000).toString()
-	}
+	// const variables = {
+	// 	primarySpecialtyValue: selectedSpecialty,
+	// 	ts: (Math.random() * 1000).toString()
+	// }
 
-	const isAuthor = isAuthorEnvironment();
-	// const url = window?.location?.origin?.includes('author')
-	// 	? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
-	// 		Math.random() * 1000
-	// 	}`
-	// 	: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
-	// 		Math.random() * 1000
-	// 	}`;
+	// If EITHER the dispatcher, CDN, or legacy endpoint expects full encoding of the segment
+	// 	// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B) and equals ('=' => %3D) as well.
+	// 	// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
+	const variablesString = `;primarySpecialtyValue=${encodeURIComponent(selectedSpecialty)};ts=${encodeURIComponent(Math.random() * 1000)}`; 
+	// Now encode the *entire* variable segment (including starting semicolon)
+	const encodedSegment = encodeURIComponent(variablesString);
+
 	const url = window?.location?.origin?.includes('author')
-		? encodePersistedQueryUrl(aemAuthorUrl, persistedQuery, variables)
-		: encodePersistedQueryUrl(aemPublishUrl, persistedQuery, variables);
+		? `${aemAuthorUrl}${persistedQuery}${encodedSegment}`
+		: `${aemPublishUrl}${persistedQuery}${encodedSegment}`;
 
 	const cfList = await executeQuery(url);
 
@@ -340,18 +339,6 @@ async function fetchDoctorsBySelectedGender(selectedGender) {
 		: `${aemPublishUrl}${persistedQuery};genderValue=${selectedGender};ts=${
 			Math.random() * 1000
 		}`;
-	// const options = { credentials: 'include' };
-
-	// const cfList = await fetch(url, options)
-	// 	.then((response) => response.json())
-	// 	.then((contentfragments) => {
-	// 		let data = '';
-	// 		if (contentfragments.data && contentfragments.data.doctorList) {
-	// 			data = contentfragments.data.doctorList;
-	// 		}
-
-	// 		return data.items;
-    // });
 
 	const cfList = await executeQuery(url);
 
