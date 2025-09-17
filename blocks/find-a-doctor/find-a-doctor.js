@@ -108,6 +108,8 @@ console.log('block config', config);
 			const doctorQueryBySpecialtyResults = await fetchDoctorsBySelectedSpecialty(selectedSpecialty);
 			renderDoctorResultsPanel(searchResultsPnl, doctorQueryBySpecialtyResults);
 			block.appendChild(searchResultsPnl);
+		} else {
+			document.querySelector('a.clear-filters').click();
 		}
 	});
 
@@ -126,6 +128,8 @@ console.log('block config', config);
 			const doctorQueryByGenderResults = await fetchDoctorsBySelectedGender(selectedGender);
 			renderDoctorResultsPanel(searchResultsPnl, doctorQueryByGenderResults);
 			block.appendChild(searchResultsPnl);
+		} else {
+			document.querySelector('a.clear-filters').click();
 		}
 	});
 
