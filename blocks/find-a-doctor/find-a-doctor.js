@@ -291,16 +291,35 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 	// NOT working even though it looks correct in developer console
 	// const selectedSpecialtyEncoded = encodeURIComponent(selectedSpecialty);
 	// changing to CONTAINS query just for demo
-	const firstWordSpecialty = selectedSpecialty.trim().split(/\s+/)[0];
+	// const firstWordSpecialty = selectedSpecialty.trim().split(/\s+/)[0];
+	const encodePersistedQueryUrl = (baseUrl, persistedQuery, variables) => {
+		// Build the variable string: "variable1=value1;variable2=value2"
+		const variableString = Object.entries(variables)
+			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+			.join(';');
+		// If EITHER the dispatcher, CDN, or legacy endpoint expects full encoding of the segment
+		// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B) and equals ('=' => %3D) as well.
+		// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
+		const encodedSegment = `;%${variableString.replace(/;/g, '%3B').replace(/=/g, '%3D')}`;
+		return `${baseUrl}${persistedQuery}${encodedSegment}`;
+	};
+
+	const variables = {
+		primarySpecialtyValue: selectedSpecialty,
+		ts: (Math.random() * 1000).toString()
+	}
 
 	const isAuthor = isAuthorEnvironment();
+	// const url = window?.location?.origin?.includes('author')
+	// 	? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
+	// 		Math.random() * 1000
+	// 	}`
+	// 	: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
+	// 		Math.random() * 1000
+	// 	}`;
 	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
-			Math.random() * 1000
-		}`
-		: `${aemPublishUrl}${persistedQuery};primarySpecialtyValue=${firstWordSpecialty};ts=${
-			Math.random() * 1000
-		}`;
+		? encodePersistedQueryUrl(aemAuthorUrl, persistedQuery, variables)
+		: encodePersistedQueryUrl(aemPublishUrl, persistedQuery, variables);
 
 	const cfList = await executeQuery(url);
 
