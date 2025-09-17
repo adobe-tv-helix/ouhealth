@@ -374,3 +374,7 @@ main section header > *:last-child {
     display: block;
     font-family: var(--font-1);
 }
+
+.side-zone .physician-locations header {
+    height: unset;
+}
