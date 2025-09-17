@@ -300,7 +300,8 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 		// If EITHER the dispatcher, CDN, or legacy endpoint expects full encoding of the segment
 		// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B) and equals ('=' => %3D) as well.
 		// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
-		const encodedSegment = `;%${variableString.replace(/;/g, '%3B').replace(/=/g, '%3D')}`;
+		const encodedSegment = `;%${variableString.replace(/;/g, '%3B')}`;//.replace(/=/g, '%3D')}`;
+		console.log('encodedSegment', encodedSegment);
 		return `${baseUrl}${persistedQuery}${encodedSegment}`;
 	};
 
