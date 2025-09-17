@@ -90,6 +90,8 @@ console.log('block config', config);
 			const doctorQueryByNameResults = await fetchDoctorsBySelectedName(selectedName);
 			renderDoctorResultsPanel(searchResultsPnl, doctorQueryByNameResults);
 			block.appendChild(searchResultsPnl);
+		} else {
+			document.querySelector('a.clear-filters').click();
 		}
 	});
 
