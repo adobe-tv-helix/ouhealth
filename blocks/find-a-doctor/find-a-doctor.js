@@ -311,15 +311,24 @@ async function fetchDoctorsBySelectedSpecialty(selectedSpecialty) {
 	// }
 
 	// If EITHER the dispatcher, CDN, or legacy endpoint expects full encoding of the segment
-	// 	// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B) and equals ('=' => %3D) as well.
-	// 	// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
-	const variablesString = `;primarySpecialtyValue=${encodeURIComponent(selectedSpecialty)};ts=${encodeURIComponent(Math.random() * 1000)}`; 
-	// Now encode the *entire* variable segment (including starting semicolon)
-	const encodedSegment = encodeURIComponent(variablesString);
+	// (usually if FT_SITES-8590 is NOT enabled), encode semicolons (';' => %3B).
+	// DO NOT ENCODE EQUALS ('=' => %3D).
+	// https://adobe-dss.slack.com/archives/C04DX90RZ9T/p1711168952880299
+	const variables = {
+		primarySpecialtyValue: selectedSpecialty,
+		ts: Math.random() * 1000
+	  };
+	let encodedVariablesString = Object.entries(variables)
+	  	.map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+	  	.join(';');
+	// encode the semicolons
+	encodedVariablesString = encodedVariablesString.replace(/;/g, '%3B');
+	// prepend a semicolon (encoded as %3B)
+	encodedVariablesString = '%3B' + encodedVariablesString;
 
 	const url = window?.location?.origin?.includes('author')
-		? `${aemAuthorUrl}${persistedQuery}${encodedSegment}`
-		: `${aemPublishUrl}${persistedQuery}${encodedSegment}`;
+		? `${aemAuthorUrl}${persistedQuery}${encodedVariablesString}`
+		: `${aemPublishUrl}${persistedQuery}${encodedVariablesString}`;
 
 	const cfList = await executeQuery(url);
 
