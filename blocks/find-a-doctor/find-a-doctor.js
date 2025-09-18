@@ -187,7 +187,7 @@ async function renderDoctorResultsPanel(searchResults, allDoctors) {
 			<a href="${strippedPagePath}" class="flex-top-between-block-500">
 				<figure role="presentation">
 					<picture>
-						<img loading="lazy" alt="" src="${doctor.imagePath?._path}">			
+						<img loading="lazy" alt="" src="${doctor.imagePath?._path || '/content/dam/ouhealth/fragments/provider-placeholder-male.jpg'}">			
 					</picture>
 				</figure>
 				<div class="info">
