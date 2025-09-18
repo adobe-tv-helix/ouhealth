@@ -178,7 +178,12 @@ async function renderDoctorResultsPanel(searchResults, allDoctors) {
 	doctorResultsList.innerHTML = '';
     doctorResultsList.className = 'system-cards items-25';
 
-	allDoctors.forEach(doctor => {
+	const sortedDoctors = allDoctors.sort((a, b) => {
+		// Split by spaces and take the last segment as last name
+		const getLastName = name => name.split(' ').slice(-1)[0].toLowerCase();
+		return getLastName(a.fullName).localeCompare(getLastName(b.fullName));
+	});
+	sortedDoctors.forEach(doctor => {
 		const indDoctor = document.createElement('li');
 		indDoctor.className = 'half item-1';
 		const strippedPagePath = doctor.doctorPage?._path.replace(/^\/content\/ouhealth\/index?/, '');
