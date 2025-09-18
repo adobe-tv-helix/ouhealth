@@ -33,6 +33,7 @@ console.log('block config', config);
 							<div class="input-text">
 								<select id="PhysicianSearch_HDR0_SpecialtyIDs" autocomplete="off" class="ui-cms-select ui-cms-input" name="PhysicianSearch$HDR0$SpecialtyIDs" data-history="SpecialtyIDs" data-history-qs="Specialty" data-search="true">
 									<option value="" selected="">${config?.filterspecialtyplaceholder || 'All Specialties'}</option>
+									<option value="Infectious Diseases">Infectious Diseases</option>
 									<option value="Nephrology">Nephrology</option>
 									<option value="Pediatric Nephrology">Pediatric Nephrology</option>
 									<option value="Psychiatry">Psychiatry</option>
